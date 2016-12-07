@@ -1,20 +1,21 @@
-
 /******************************************************************************
 * ECE 5775 - Final Project Code
-* Project Name: Corner detection algorithm - Simulation testbench
-* Created by: Mohit Yogesh Modi (mm2675),
-*	    Aashish Agarwal   (aa2264),
-*	    Asha Ganesan      (ag2248)
-* Fall 2014: Submission Date = Dec 12-2014
-* This file takes input static image and performs corner detection algorithm
-* on the image using both HLS "hw" implementation and "sw" implementation,
-* producing two different outputs.
-* This project has been referrenced from 3 source of information
-* (1) Canny edge detection project of ECE5775-Fall 2013, submitted by Aadeetya Shreedhar 
-*    and Alexander Wang
-* (2) Corner detection logic is referranced from ECE5760 project submitted by Julie Wang
-*    Website Link: http://people.ece.cornell.edu/land/courses/ece5760/FinalProjects/s2014/jsw267/html/html/
-* (3) Xilinx tutorial and the copyright notice and disclaimer is retained as follows.
+*
+* Project:     "Hole in the Wall" Game
+* Created by:  Brian Ritchken  (bjr96),
+*              James Talmage   (jmt329),
+*              Baturay Turkmen (bt268)
+* Date:        December, 2016
+* Description: This file comprises all the stages of the HLS dataflow which are necessary
+* to implement the game. Near the end of the file, the stages are connected in the
+* image_filter function.
+*
+* We referenced the following sources:
+* (1) ECE 5775 Fall 2014, "Rock-Paper-Scissors" game by
+*     Mohit Yogesh Modi (mm2675), Aashish Agarwal (aa2264), and Asha Ganesan (ag2248)
+*
+* (2) The Xilinx HLS dataflow tutorial, for which the copyright notice and disclaimer
+*     has been retained as follows.
 ********************************************************************************/
 
 /***************************************************************************
