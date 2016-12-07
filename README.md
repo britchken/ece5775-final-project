@@ -1,4 +1,4 @@
-# Instructions for demonstrating our project
+# Setting up the project:
 
 Note: Much of this tutorial is copied from TA Yuan Zhou (yz882@cornell.edu).
 
