@@ -3,9 +3,13 @@
 Note: Much of this tutorial is copied from TA Yuan Zhou (yz882@cornell.edu).
 
 1. Copy the demo project files and set up the environment
+
   -- (1) Copy /classes/ece5775/xilinx/xapp1167.zip to your local directory. 
+  
   -- (2) Unzip it. 
+  
   -- (3) Source a different setup script: /classes/ece5775/xilinx/xil-setup.
+  
   This script sets up the environment for Vivado and Vivado_HLS (we are using an older version for this project). 
 
 2. Structure of the directory
