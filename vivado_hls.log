@@ -1,0 +1,679 @@
+================================================================
+  Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC
+  Version: 2013.2
+  Build date: Thu Jun 13 16:07:59 PM 2013
+  Copyright (C) 2013 Xilinx Inc. All rights reserved.
+================================================================
+@I [LIC-101] Checked out feature [HLS]
+@I [HLS-10] Running '/opt/xilinx/Vivado_HLS/2013.2/Linux_x86_64/bin/vivado_hls_bin'
+            for user 'bjr96' on host 'en-ec-ecelinux-02.coecis.cornell.edu' (Linux_x86_64 version 3.10.0-327.36.3.el7.x86_64) on Tue Dec 06 11:19:55 EST 2016
+            in directory '/home/bjr96/final_project/xapp1167_vivado/sw/finalProject'
+@I [HLS-10] Creating and opening project '/home/bjr96/final_project/xapp1167_vivado/sw/finalProject/prj'.
+@I [HLS-10] Adding design file 'top.cpp' to the project.
+@I [HLS-10] Adding test bench file 'test.cpp' to the project.
+@I [HLS-10] Adding test bench file 'opencv_top.cpp' to the project.
+@I [HLS-10] Adding test bench file 'test1.bmp' to the project.
+@I [HLS-10] Creating and opening solution '/home/bjr96/final_project/xapp1167_vivado/sw/finalProject/prj/solution1'.
+@I [HLS-10] Cleaning up the solution database.
+@I [HLS-10] Setting target device to 'xc7z020clg484-1'
+@I [SYN-201] Setting up clock 'default' with a period of 6.66667ns.
+make[1]: Entering directory `/home/bjr96/final_project/xapp1167_vivado/sw/finalProject/prj/solution1/csim/build'
+   Compiling /home/bjr96/final_project/xapp1167_vivado/sw/finalProject/opencv_top.cpp in debug mode
+   Compiling /home/bjr96/final_project/xapp1167_vivado/sw/finalProject/test.cpp in debug mode
+   Compiling /home/bjr96/final_project/xapp1167_vivado/sw/finalProject/top.cpp in debug mode
+   Generating csim.exe
+make[1]: Leaving directory `/home/bjr96/final_project/xapp1167_vivado/sw/finalProject/prj/solution1/csim/build'
+Bounding Boxtop: 123, bottom: 1015, left:520, right:1447
+
+Output Generated!
+@I [SIM-1] CSim done with 0 errors.
+@I [HLS-10] Importing test bench file 'test1.bmp' ... 
+@I [HLS-10] Importing test bench file 'opencv_top.cpp' ... 
+@I [HLS-10] Importing test bench file 'test.cpp' ... 
+@I [HLS-10] Analyzing design file 'top.cpp' ... 
+@I [HLS-10] Validating synthesis directives ...
+@I [HLS-10] Checking synthesizability ...
+@W [SYNCHK-23] hls_video_io.h:138: variable-indexed range selection may cause suboptimal QoR.
+@I [SYNCHK-10] 0 error(s), 1 warning(s).
+@I [HLS-10] Starting code transformations ...
+@I [XFORM-502] Unrolling all sub-loops inside loop 'Loop-2.1' in function 'hls::AXIvideo2Mat<32, 1080, 1920, 16>' for pipelining.
+@I [XFORM-502] Unrolling all sub-loops inside loop 'Loop-1.1' (top.cpp:140) in function 'rgb2bw' for pipelining.
+@I [XFORM-502] Unrolling all sub-loops inside loop 'Loop-1.1' (top.cpp:417) in function 'draw' for pipelining.
+@I [XFORM-502] Unrolling all sub-loops inside loop 'Loop-1.1' (top.cpp:351) in function 'compute' for pipelining.
+@I [XFORM-502] Unrolling all sub-loops inside loop 'Loop-1.1' in function 'hls::Mat2AXIvideo<32, 1080, 1920, 16>' for pipelining.
+@I [XFORM-502] Unrolling all sub-loops inside loop 'Loop-1.1' (top.cpp:304) in function 'bounding_box' for pipelining.
+@I [XFORM-502] Unrolling all sub-loops inside loop 'Loop-1.1' (top.cpp:193) in function 'median_filter' for pipelining.
+@I [XFORM-501] Unrolling loop 'Loop-2.1.1' in function 'hls::AXIvideo2Mat<32, 1080, 1920, 16>' completely.
+@I [XFORM-501] Unrolling loop 'Loop-2.1.2' in function 'hls::AXIvideo2Mat<32, 1080, 1920, 16>' completely.
+@I [XFORM-501] Unrolling loop 'Loop-1.1.1' (top.cpp:144) in function 'rgb2bw' completely.
+@I [XFORM-501] Unrolling loop 'Loop-1.1.2' (top.cpp:155) in function 'rgb2bw' completely.
+@I [XFORM-501] Unrolling loop 'Loop-1.1.1' (top.cpp:421) in function 'draw' completely.
+@I [XFORM-501] Unrolling loop 'Loop-1.1.2' (top.cpp:461) in function 'draw' completely.
+@I [XFORM-501] Unrolling loop 'Loop-1.1.1' (top.cpp:355) in function 'compute' completely.
+@I [XFORM-501] Unrolling loop 'Loop-1.1.2' (top.cpp:396) in function 'compute' completely.
+@I [XFORM-501] Unrolling loop 'Loop-1.1.1' in function 'hls::Mat2AXIvideo<32, 1080, 1920, 16>' completely.
+@I [XFORM-501] Unrolling loop 'Loop-1.1.2' in function 'hls::Mat2AXIvideo<32, 1080, 1920, 16>' completely.
+@I [XFORM-501] Unrolling loop 'Loop-1.1.1' (top.cpp:307) in function 'bounding_box' completely.
+@I [XFORM-501] Unrolling loop 'Loop-1.1.2' (top.cpp:331) in function 'bounding_box' completely.
+@I [XFORM-501] Unrolling loop 'Loop-1.1.1' (top.cpp:199) in function 'median_filter' completely.
+@I [XFORM-501] Unrolling loop 'Loop-1.1.2' (top.cpp:232) in function 'median_filter' completely.
+@I [XFORM-501] Unrolling loop 'Loop-1.1.2.1' (top.cpp:232) in function 'median_filter' completely.
+@I [XFORM-501] Unrolling loop 'Loop-1.1.3' (top.cpp:258) in function 'median_filter' completely.
+@I [XFORM-501] Unrolling loop 'Loop-1.1.3.1' (top.cpp:259) in function 'median_filter' completely.
+@I [XFORM-501] Unrolling loop 'Loop-1.1.4' (top.cpp:277) in function 'median_filter' completely.
+@I [XFORM-102] Partitioning array 's.val.assign.1' automatically.
+@I [XFORM-102] Partitioning array 's.val.assign' automatically.
+@I [XFORM-102] Partitioning array 's.val.assign.3' automatically.
+@I [XFORM-102] Partitioning array 'memtmp.i' automatically.
+@I [XFORM-102] Partitioning array 's.val.assign.11' automatically.
+@I [XFORM-102] Partitioning array 's.val.assign.9' automatically.
+@I [XFORM-102] Partitioning array 's.val.assign.7' automatically.
+@I [XFORM-102] Partitioning array 's.val.assign.5' automatically.
+@I [XFORM-102] Partitioning array 's.val.assign.4' automatically.
+@I [XFORM-102] Partitioning array 'memtmp.i' automatically.
+@I [XFORM-102] Automatically partitioning streamed array 'medianImage.data_stream.V' (top.cpp:494) .
+@I [XFORM-102] Automatically partitioning streamed array 'medianImage4.data_stream.V' (top.cpp:497) .
+@I [XFORM-102] Automatically partitioning streamed array 'bw.data_stream.V' (top.cpp:492) .
+@I [XFORM-102] Automatically partitioning streamed array 'medianImage3.data_stream.V' (top.cpp:496) .
+@I [XFORM-102] Automatically partitioning streamed array 'medianImage2.data_stream.V' (top.cpp:495) .
+@I [XFORM-102] Automatically partitioning streamed array 'result.data_stream.V' (top.cpp:500) .
+@I [XFORM-102] Automatically partitioning streamed array 'src.data_stream.V' (top.cpp:491) .
+@I [XFORM-101] Partitioning array 'pixel_gd.val' (top.cpp:134) in dimension 1 completely.
+@I [XFORM-101] Partitioning array 'out_pixel.val' (top.cpp:135) in dimension 1 completely.
+@I [XFORM-101] Partitioning array 'pixel_out.val' (top.cpp:136) in dimension 1 completely.
+@I [XFORM-101] Partitioning array 'scl.val'  in dimension 1 completely.
+@I [XFORM-101] Partitioning array 'pixel_in.val' (top.cpp:407) in dimension 1 completely.
+@I [XFORM-101] Partitioning array 'pixel_out.val' (top.cpp:408) in dimension 1 completely.
+@I [XFORM-101] Partitioning array 'scl.val'  in dimension 1 completely.
+@I [XFORM-101] Partitioning array 'pixel_in.val' (top.cpp:341) in dimension 1 completely.
+@I [XFORM-101] Partitioning array 'scl.val'  in dimension 1 completely.
+@W [XFORM-104] Completely partitioning array 'ref.V' (top.cpp:58) accessed through non-constant indices on dimension 1 (top.cpp:373), which may result in long runtime and suboptimal QoR due to large multiplexers. Please consider wrapping the array access into a function or using a register file core instead.
+@I [XFORM-101] Partitioning array 'ref.V' (top.cpp:58) in dimension 1 completely.
+@I [XFORM-101] Partitioning array 'pixel_in.val' (top.cpp:288) in dimension 1 completely.
+@I [XFORM-101] Partitioning array 'scl.val'  in dimension 1 completely.
+@I [XFORM-101] Partitioning array 'lineBuffer.val' (top.cpp:171) in dimension 1 completely.
+@I [XFORM-101] Partitioning array 'window.val' (top.cpp:174) in dimension 1 completely.
+@I [XFORM-101] Partitioning array 'pixel_in.val' (top.cpp:177) in dimension 1 completely.
+@I [XFORM-101] Partitioning array 'pixel_out.val' (top.cpp:178) in dimension 1 completely.
+@I [XFORM-101] Partitioning array 'scl.val'  in dimension 1 completely.
+@I [XFORM-101] Partitioning array 'medianImage.data_stream.V' (top.cpp:494) in dimension 1 completely.
+@I [XFORM-101] Partitioning array 'medianImage4.data_stream.V' (top.cpp:497) in dimension 1 completely.
+@I [XFORM-101] Partitioning array 'bw.data_stream.V' (top.cpp:492) in dimension 1 completely.
+@I [XFORM-101] Partitioning array 'medianImage3.data_stream.V' (top.cpp:496) in dimension 1 completely.
+@I [XFORM-101] Partitioning array 'medianImage2.data_stream.V' (top.cpp:495) in dimension 1 completely.
+@I [XFORM-101] Partitioning array 'result.data_stream.V' (top.cpp:500) in dimension 1 completely.
+@I [XFORM-101] Partitioning array 'src.data_stream.V' (top.cpp:491) in dimension 1 completely.
+@I [XFORM-101] Partitioning array 'window.val.0' (top.cpp:174) in dimension 1 completely.
+@I [XFORM-101] Partitioning array 'window.val.1' (top.cpp:174) in dimension 1 completely.
+@I [XFORM-101] Partitioning array 'window.val.2' (top.cpp:174) in dimension 1 completely.
+@I [XFORM-101] Partitioning array 'window.val.3' (top.cpp:174) in dimension 1 completely.
+@I [XFORM-101] Partitioning array 'window.val.4' (top.cpp:174) in dimension 1 completely.
+@I [XFORM-101] Partitioning array 'window.val.5' (top.cpp:174) in dimension 1 completely.
+@I [XFORM-101] Partitioning array 'window.val.6' (top.cpp:174) in dimension 1 completely.
+@I [XFORM-101] Partitioning array 'window.val.7' (top.cpp:174) in dimension 1 completely.
+@I [XFORM-101] Partitioning array 'window.val.8' (top.cpp:174) in dimension 1 completely.
+@I [XFORM-712] Applying dataflow to function 'image_filter' (top.cpp:479), detected/extracted 16 process function(s): 'hls::Mat<1080, 1920, 16>::init', 'hls::Mat<1080, 1920, 0>::init', 'hls::Mat<1080, 1920, 0>::init', 'hls::Mat<1080, 1920, 0>::init', 'hls::Mat<1080, 1920, 0>::init', 'hls::Mat<1080, 1920, 0>::init', 'hls::Mat<1080, 1920, 0>::init', 'hls::Mat<1080, 1920, 16>::init', 'hls::AXIvideo2Mat<32, 1080, 1920, 16>', 'rgb2bw', 'median_filter', 'median_filter', 'bounding_box', 'compute', 'draw' and 'hls::Mat2AXIvideo<32, 1080, 1920, 16>'.
+@I [XFORM-401] Performing if-conversion on hyperblock from (top.cpp:232) to (top.cpp:273) in function 'median_filter'... converting 5 basic blocks.
+@I [XFORM-401] Performing if-conversion on hyperblock from (top.cpp:232) to (top.cpp:273) in function 'median_filter.1'... converting 5 basic blocks.
+@I [XFORM-401] Performing if-conversion on hyperblock from (top.cpp:304) to (top.cpp:315) in function 'bounding_box'... converting 6 basic blocks.
+@I [XFORM-401] Performing if-conversion on hyperblock to (top.cpp:351) in function 'compute'... converting 4 basic blocks.
+@I [XFORM-401] Performing if-conversion on hyperblock to (top.cpp:417) in function 'draw'... converting 7 basic blocks.
+@I [XFORM-11] Balancing expressions in function 'hls::Mat<1080, 1920, 0>::init.5'...3 expression(s) balanced.
+@I [XFORM-11] Balancing expressions in function 'hls::Mat<1080, 1920, 16>::init'...3 expression(s) balanced.
+@I [XFORM-11] Balancing expressions in function 'hls::Mat<1080, 1920, 0>::init'...3 expression(s) balanced.
+@I [XFORM-11] Balancing expressions in function 'hls::Mat<1080, 1920, 0>::init.1'...3 expression(s) balanced.
+@I [XFORM-11] Balancing expressions in function 'hls::Mat<1080, 1920, 0>::init.2'...3 expression(s) balanced.
+@I [XFORM-11] Balancing expressions in function 'hls::Mat<1080, 1920, 0>::init.3'...3 expression(s) balanced.
+@I [XFORM-11] Balancing expressions in function 'hls::Mat<1080, 1920, 0>::init.4'...3 expression(s) balanced.
+@I [XFORM-11] Balancing expressions in function 'hls::Mat<1080, 1920, 16>::init.1'...3 expression(s) balanced.
+@I [XFORM-11] Balancing expressions in function 'median_filter' (top.cpp:165)...4 expression(s) balanced.
+@I [XFORM-11] Balancing expressions in function 'median_filter.1' (top.cpp:171)...4 expression(s) balanced.
+@I [ANALYSIS-51] Setting 'None' inter dependency for variable 'lineBuffer_val_0' (top.cpp:171) in region (top.cpp:171).
+@I [ANALYSIS-51] Setting 'None' inter dependency for variable 'lineBuffer_val_1' (top.cpp:171) in region (top.cpp:171).
+@I [ANALYSIS-51] Setting 'None' inter dependency for variable 'lineBuffer_val_2' (top.cpp:171) in region (top.cpp:171).
+@I [ANALYSIS-51] Setting 'None' inter dependency for variable 'lineBuffer_val_3' (top.cpp:171) in region (top.cpp:171).
+@I [ANALYSIS-51] Setting 'None' inter dependency for variable 'lineBuffer_val_4' (top.cpp:171) in region (top.cpp:171).
+@I [ANALYSIS-51] Setting 'None' inter dependency for variable 'lineBuffer_val_5' (top.cpp:171) in region (top.cpp:171).
+@I [ANALYSIS-51] Setting 'None' inter dependency for variable 'lineBuffer_val_6' (top.cpp:171) in region (top.cpp:171).
+@I [ANALYSIS-51] Setting 'None' inter dependency for variable 'lineBuffer_val_7' (top.cpp:171) in region (top.cpp:171).
+@I [ANALYSIS-51] Setting 'None' intra dependency for variable 'lineBuffer_val_0' (top.cpp:171) in region (top.cpp:171).
+@I [ANALYSIS-51] Setting 'None' intra dependency for variable 'lineBuffer_val_1' (top.cpp:171) in region (top.cpp:171).
+@I [ANALYSIS-51] Setting 'None' intra dependency for variable 'lineBuffer_val_2' (top.cpp:171) in region (top.cpp:171).
+@I [ANALYSIS-51] Setting 'None' intra dependency for variable 'lineBuffer_val_3' (top.cpp:171) in region (top.cpp:171).
+@I [ANALYSIS-51] Setting 'None' intra dependency for variable 'lineBuffer_val_4' (top.cpp:171) in region (top.cpp:171).
+@I [ANALYSIS-51] Setting 'None' intra dependency for variable 'lineBuffer_val_5' (top.cpp:171) in region (top.cpp:171).
+@I [ANALYSIS-51] Setting 'None' intra dependency for variable 'lineBuffer_val_6' (top.cpp:171) in region (top.cpp:171).
+@I [ANALYSIS-51] Setting 'None' intra dependency for variable 'lineBuffer_val_7' (top.cpp:171) in region (top.cpp:171).
+@I [ANALYSIS-51] Setting 'None' inter dependency for variable 'lineBuffer_val_0' (top.cpp:171) in region (top.cpp:171).
+@I [ANALYSIS-51] Setting 'None' inter dependency for variable 'lineBuffer_val_1' (top.cpp:171) in region (top.cpp:171).
+@I [ANALYSIS-51] Setting 'None' inter dependency for variable 'lineBuffer_val_2' (top.cpp:171) in region (top.cpp:171).
+@I [ANALYSIS-51] Setting 'None' inter dependency for variable 'lineBuffer_val_3' (top.cpp:171) in region (top.cpp:171).
+@I [ANALYSIS-51] Setting 'None' inter dependency for variable 'lineBuffer_val_4' (top.cpp:171) in region (top.cpp:171).
+@I [ANALYSIS-51] Setting 'None' inter dependency for variable 'lineBuffer_val_5' (top.cpp:171) in region (top.cpp:171).
+@I [ANALYSIS-51] Setting 'None' inter dependency for variable 'lineBuffer_val_6' (top.cpp:171) in region (top.cpp:171).
+@I [ANALYSIS-51] Setting 'None' inter dependency for variable 'lineBuffer_val_7' (top.cpp:171) in region (top.cpp:171).
+@I [ANALYSIS-51] Setting 'None' intra dependency for variable 'lineBuffer_val_0' (top.cpp:171) in region (top.cpp:171).
+@I [ANALYSIS-51] Setting 'None' intra dependency for variable 'lineBuffer_val_1' (top.cpp:171) in region (top.cpp:171).
+@I [ANALYSIS-51] Setting 'None' intra dependency for variable 'lineBuffer_val_2' (top.cpp:171) in region (top.cpp:171).
+@I [ANALYSIS-51] Setting 'None' intra dependency for variable 'lineBuffer_val_3' (top.cpp:171) in region (top.cpp:171).
+@I [ANALYSIS-51] Setting 'None' intra dependency for variable 'lineBuffer_val_4' (top.cpp:171) in region (top.cpp:171).
+@I [ANALYSIS-51] Setting 'None' intra dependency for variable 'lineBuffer_val_5' (top.cpp:171) in region (top.cpp:171).
+@I [ANALYSIS-51] Setting 'None' intra dependency for variable 'lineBuffer_val_6' (top.cpp:171) in region (top.cpp:171).
+@I [ANALYSIS-51] Setting 'None' intra dependency for variable 'lineBuffer_val_7' (top.cpp:171) in region (top.cpp:171).
+@W [SYN-210] Renamed object name 'init_U0' to 'init_U0'
+@W [SYN-210] Renamed object name 'init.1_U0' to 'init_1_U0'
+@W [SYN-210] Renamed object name 'init.1.1_U0' to 'init_1_1_U0'
+@W [SYN-210] Renamed object name 'init.2_U0' to 'init_2_U0'
+@W [SYN-210] Renamed object name 'init.3_U0' to 'init_3_U0'
+@W [SYN-210] Renamed object name 'init.4_U0' to 'init_4_U0'
+@W [SYN-210] Renamed object name 'init.5_U0' to 'init_5_U0'
+@W [SYN-210] Renamed object name 'init.1.2_U0' to 'init_1_2_U0'
+@W [SYN-210] Renamed object name 'AXIvideo2Mat<32,1080,1920,16>_U0' to 'AXIvideo2Mat_32_1080_1920_16_U0'
+@W [SYN-210] Renamed object name 'rgb2bw_U0' to 'rgb2bw_U0'
+@W [SYN-210] Renamed object name 'median_filter_U0' to 'median_filter_U0'
+@W [SYN-210] Renamed object name 'median_filter.1_U0' to 'median_filter_1_U0'
+@W [SYN-210] Renamed object name 'bounding_box_U0' to 'bounding_box_U0'
+@W [SYN-210] Renamed object name 'compute_U0' to 'compute_U0'
+@W [SYN-210] Renamed object name 'draw_U0' to 'draw_U0'
+@W [SYN-210] Renamed object name 'Mat2AXIvideo<32,1080,1920,16>_U0' to 'Mat2AXIvideo_32_1080_1920_16_U0'
+@W [SYN-210] Renamed object name 'AP_FIFO_src_rows_V_U0' to 'src_rows_V'
+@W [SYN-210] Renamed object name 'AP_FIFO_src_rows_V_channel_U0' to 'src_rows_V_channel'
+@W [SYN-210] Renamed object name 'AP_FIFO_src_cols_V_U0' to 'src_cols_V'
+@W [SYN-210] Renamed object name 'AP_FIFO_src_cols_V_channel_U0' to 'src_cols_V_channel'
+@W [SYN-210] Renamed object name 'AP_FIFO_bw_rows_V_U0' to 'bw_rows_V'
+@W [SYN-210] Renamed object name 'AP_FIFO_bw_cols_V_U0' to 'bw_cols_V'
+@W [SYN-210] Renamed object name 'AP_FIFO_medianImage_rows_V_U0' to 'medianImage_rows_V'
+@W [SYN-210] Renamed object name 'AP_FIFO_medianImage_cols_V_U0' to 'medianImage_cols_V'
+@W [SYN-210] Renamed object name 'AP_FIFO_medianImage2_rows_V_U0' to 'medianImage2_rows_V'
+@W [SYN-210] Renamed object name 'AP_FIFO_medianImage2_cols_V_U0' to 'medianImage2_cols_V'
+@W [SYN-210] Renamed object name 'AP_FIFO_medianImage3_rows_V_U0' to 'medianImage3_rows_V'
+@W [SYN-210] Renamed object name 'AP_FIFO_medianImage3_cols_V_U0' to 'medianImage3_cols_V'
+@W [SYN-210] Renamed object name 'AP_FIFO_medianImage4_rows_V_U0' to 'medianImage4_rows_V'
+@W [SYN-210] Renamed object name 'AP_FIFO_medianImage4_cols_V_U0' to 'medianImage4_cols_V'
+@W [SYN-210] Renamed object name 'AP_FIFO_result_rows_V_U0' to 'result_rows_V'
+@W [SYN-210] Renamed object name 'AP_FIFO_result_cols_V_U0' to 'result_cols_V'
+@W [SYN-210] Renamed object name 'AP_FIFO_src_data_stream_0_V_U0' to 'src_data_stream_0_V'
+@W [SYN-210] Renamed object name 'AP_FIFO_src_data_stream_1_V_U0' to 'src_data_stream_1_V'
+@W [SYN-210] Renamed object name 'AP_FIFO_src_data_stream_2_V_U0' to 'src_data_stream_2_V'
+@W [SYN-210] Renamed object name 'AP_FIFO_bw_data_stream_0_V_U0' to 'bw_data_stream_0_V'
+@W [SYN-210] Renamed object name 'AP_FIFO_medianImage_data_stream_0_V_U0' to 'medianImage_data_stream_0_V'
+@W [SYN-210] Renamed object name 'AP_FIFO_medianImage2_data_stream_0_V_U0' to 'medianImage2_data_stream_0_V'
+@W [SYN-210] Renamed object name 'AP_FIFO_medianImage3_data_stream_0_V_U0' to 'medianImage3_data_stream_0_V'
+@W [SYN-210] Renamed object name 'AP_FIFO_bb_top_V_U0' to 'bb_top_V'
+@W [SYN-210] Renamed object name 'AP_FIFO_bb_bottom_V_U0' to 'bb_bottom_V'
+@W [SYN-210] Renamed object name 'AP_FIFO_bb_left_V_U0' to 'bb_left_V'
+@W [SYN-210] Renamed object name 'AP_FIFO_bb_right_V_U0' to 'bb_right_V'
+@W [SYN-210] Renamed object name 'AP_FIFO_medianImage4_data_stream_0_V_U0' to 'medianImage4_data_stream_0_V'
+@W [SYN-210] Renamed object name 'AP_FIFO_bb_top2_V_U0' to 'bb_top2_V'
+@W [SYN-210] Renamed object name 'AP_FIFO_bb_bottom2_V_U0' to 'bb_bottom2_V'
+@W [SYN-210] Renamed object name 'AP_FIFO_bb_left2_V_U0' to 'bb_left2_V'
+@W [SYN-210] Renamed object name 'AP_FIFO_bb_right2_V_U0' to 'bb_right2_V'
+@W [SYN-210] Renamed object name 'AP_FIFO_error_V_U0' to 'error_V'
+@W [SYN-210] Renamed object name 'AP_FIFO_valid_V_V_U0' to 'valid_V_V'
+@W [SYN-210] Renamed object name 'AP_FIFO_result_data_stream_0_V_U0' to 'result_data_stream_0_V'
+@W [SYN-210] Renamed object name 'AP_FIFO_result_data_stream_1_V_U0' to 'result_data_stream_1_V'
+@W [SYN-210] Renamed object name 'AP_FIFO_result_data_stream_2_V_U0' to 'result_data_stream_2_V'
+@I [HLS-111] Elapsed time: 20.01 seconds; current memory usage: 237 MB.
+@I [HLS-10] Starting hardware synthesis ...
+@I [HLS-10] Synthesizing 'image_filter' ...
+@W [SYN-103] Legalizing function name 'init.1' to 'init_1'.
+@W [SYN-103] Legalizing function name 'init.1.1' to 'init_1_1'.
+@W [SYN-103] Legalizing function name 'init.2' to 'init_2'.
+@W [SYN-103] Legalizing function name 'init.3' to 'init_3'.
+@W [SYN-103] Legalizing function name 'init.4' to 'init_4'.
+@W [SYN-103] Legalizing function name 'init.5' to 'init_5'.
+@W [SYN-103] Legalizing function name 'init.1.2' to 'init_1_2'.
+@W [SYN-103] Legalizing function name 'AXIvideo2Mat<32,1080,1920,16>' to 'AXIvideo2Mat_32_1080_1920_16_s'.
+@W [SYN-103] Legalizing function name 'median_filter.1' to 'median_filter_1'.
+@W [SYN-103] Legalizing function name 'Mat2AXIvideo<32,1080,1920,16>' to 'Mat2AXIvideo_32_1080_1920_16_s'.
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Scheduling module 'init' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [SCHED-11] Starting scheduling ...
+@I [SCHED-11] Finished scheduling.
+@I [HLS-111] Elapsed time: 0.05 seconds; current memory usage: 237 MB.
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Exploring micro-architecture for module 'init' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [BIND-100] Starting micro-architecture binding ...
+@I [BIND-101] Performing variable lifetime analysis.
+@I [BIND-101] Exploring resource sharing.
+@I [BIND-101] Binding resource limited operations ...
+@I [BIND-100] Finished micro-architecture binding.
+@I [HLS-111] Elapsed time: 0.01 seconds; current memory usage: 237 MB.
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Scheduling module 'init_1' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [SCHED-11] Starting scheduling ...
+@I [SCHED-11] Finished scheduling.
+@I [HLS-111] Elapsed time: 0.01 seconds; current memory usage: 237 MB.
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Exploring micro-architecture for module 'init_1' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [BIND-100] Starting micro-architecture binding ...
+@I [BIND-101] Performing variable lifetime analysis.
+@I [BIND-101] Exploring resource sharing.
+@I [BIND-101] Binding resource limited operations ...
+@I [BIND-100] Finished micro-architecture binding.
+@I [HLS-111] Elapsed time: 0.01 seconds; current memory usage: 237 MB.
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Scheduling module 'init_1_1' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [SCHED-11] Starting scheduling ...
+@I [SCHED-11] Finished scheduling.
+@I [HLS-111] Elapsed time: 0.01 seconds; current memory usage: 237 MB.
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Exploring micro-architecture for module 'init_1_1' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [BIND-100] Starting micro-architecture binding ...
+@I [BIND-101] Performing variable lifetime analysis.
+@I [BIND-101] Exploring resource sharing.
+@I [BIND-101] Binding resource limited operations ...
+@I [BIND-100] Finished micro-architecture binding.
+@I [HLS-111] Elapsed time: 0.01 seconds; current memory usage: 237 MB.
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Scheduling module 'init_2' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [SCHED-11] Starting scheduling ...
+@I [SCHED-11] Finished scheduling.
+@I [HLS-111] Elapsed time: 0.02 seconds; current memory usage: 237 MB.
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Exploring micro-architecture for module 'init_2' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [BIND-100] Starting micro-architecture binding ...
+@I [BIND-101] Performing variable lifetime analysis.
+@I [BIND-101] Exploring resource sharing.
+@I [BIND-101] Binding resource limited operations ...
+@I [BIND-100] Finished micro-architecture binding.
+@I [HLS-111] Elapsed time: 0 seconds; current memory usage: 238 MB.
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Scheduling module 'init_3' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [SCHED-11] Starting scheduling ...
+@I [SCHED-11] Finished scheduling.
+@I [HLS-111] Elapsed time: 0.02 seconds; current memory usage: 238 MB.
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Exploring micro-architecture for module 'init_3' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [BIND-100] Starting micro-architecture binding ...
+@I [BIND-101] Performing variable lifetime analysis.
+@I [BIND-101] Exploring resource sharing.
+@I [BIND-101] Binding resource limited operations ...
+@I [BIND-100] Finished micro-architecture binding.
+@I [HLS-111] Elapsed time: 0 seconds; current memory usage: 238 MB.
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Scheduling module 'init_4' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [SCHED-11] Starting scheduling ...
+@I [SCHED-11] Finished scheduling.
+@I [HLS-111] Elapsed time: 0.02 seconds; current memory usage: 238 MB.
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Exploring micro-architecture for module 'init_4' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [BIND-100] Starting micro-architecture binding ...
+@I [BIND-101] Performing variable lifetime analysis.
+@I [BIND-101] Exploring resource sharing.
+@I [BIND-101] Binding resource limited operations ...
+@I [BIND-100] Finished micro-architecture binding.
+@I [HLS-111] Elapsed time: 0 seconds; current memory usage: 238 MB.
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Scheduling module 'init_5' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [SCHED-11] Starting scheduling ...
+@I [SCHED-11] Finished scheduling.
+@I [HLS-111] Elapsed time: 0.01 seconds; current memory usage: 238 MB.
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Exploring micro-architecture for module 'init_5' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [BIND-100] Starting micro-architecture binding ...
+@I [BIND-101] Performing variable lifetime analysis.
+@I [BIND-101] Exploring resource sharing.
+@I [BIND-101] Binding resource limited operations ...
+@I [BIND-100] Finished micro-architecture binding.
+@I [HLS-111] Elapsed time: 0 seconds; current memory usage: 238 MB.
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Scheduling module 'init_1_2' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [SCHED-11] Starting scheduling ...
+@I [SCHED-11] Finished scheduling.
+@I [HLS-111] Elapsed time: 0.01 seconds; current memory usage: 238 MB.
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Exploring micro-architecture for module 'init_1_2' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [BIND-100] Starting micro-architecture binding ...
+@I [BIND-101] Performing variable lifetime analysis.
+@I [BIND-101] Exploring resource sharing.
+@I [BIND-101] Binding resource limited operations ...
+@I [BIND-100] Finished micro-architecture binding.
+@I [HLS-111] Elapsed time: 0.02 seconds; current memory usage: 238 MB.
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Scheduling module 'AXIvideo2Mat_32_1080_1920_16_s' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [SCHED-11] Starting scheduling ...
+@I [SCHED-61] Pipelining loop 'Loop 1'.
+@I [SCHED-61] Pipelining result: Target II: 1, Final II: 1, Depth: 1.
+@I [SCHED-61] Pipelining loop 'Loop 2.1'.
+@I [SCHED-61] Pipelining result: Target II: 1, Final II: 1, Depth: 2.
+@I [SCHED-61] Pipelining loop 'Loop 2.2'.
+@I [SCHED-61] Pipelining result: Target II: 1, Final II: 1, Depth: 1.
+@I [SCHED-11] Finished scheduling.
+@I [HLS-111] Elapsed time: 0.08 seconds; current memory usage: 238 MB.
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Exploring micro-architecture for module 'AXIvideo2Mat_32_1080_1920_16_s' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [BIND-100] Starting micro-architecture binding ...
+@I [BIND-101] Performing variable lifetime analysis.
+@I [BIND-101] Exploring resource sharing.
+@I [BIND-101] Binding resource limited operations ...
+@I [BIND-100] Finished micro-architecture binding.
+@I [HLS-111] Elapsed time: 0.04 seconds; current memory usage: 239 MB.
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Scheduling module 'rgb2bw' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [SCHED-11] Starting scheduling ...
+@I [SCHED-61] Pipelining loop 'Loop 1.1'.
+@I [SCHED-61] Pipelining result: Target II: 1, Final II: 1, Depth: 3.
+@I [SCHED-11] Finished scheduling.
+@I [HLS-111] Elapsed time: 0.07 seconds; current memory usage: 239 MB.
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Exploring micro-architecture for module 'rgb2bw' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [BIND-100] Starting micro-architecture binding ...
+@I [BIND-101] Performing variable lifetime analysis.
+@I [BIND-101] Exploring resource sharing.
+@I [BIND-101] Binding resource limited operations ...
+@I [BIND-100] Finished micro-architecture binding.
+@I [HLS-111] Elapsed time: 0.01 seconds; current memory usage: 239 MB.
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Scheduling module 'median_filter' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [SCHED-11] Starting scheduling ...
+@I [SCHED-61] Pipelining loop 'Loop 1.1'.
+@I [SCHED-61] Pipelining result: Target II: 1, Final II: 1, Depth: 54.
+@I [SCHED-11] Finished scheduling.
+@I [HLS-111] Elapsed time: 2.18 seconds; current memory usage: 244 MB.
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Exploring micro-architecture for module 'median_filter' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [BIND-100] Starting micro-architecture binding ...
+@I [BIND-101] Performing variable lifetime analysis.
+@I [BIND-101] Exploring resource sharing.
+@I [BIND-101] Binding resource limited operations ...
+@I [BIND-100] Finished micro-architecture binding.
+@I [HLS-111] Elapsed time: 0.32 seconds; current memory usage: 246 MB.
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Scheduling module 'median_filter_1' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [SCHED-11] Starting scheduling ...
+@I [SCHED-61] Pipelining loop 'Loop 1.1'.
+@I [SCHED-61] Pipelining result: Target II: 1, Final II: 1, Depth: 54.
+@I [SCHED-11] Finished scheduling.
+@I [HLS-111] Elapsed time: 2.54 seconds; current memory usage: 252 MB.
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Exploring micro-architecture for module 'median_filter_1' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [BIND-100] Starting micro-architecture binding ...
+@I [BIND-101] Performing variable lifetime analysis.
+@I [BIND-101] Exploring resource sharing.
+@I [BIND-101] Binding resource limited operations ...
+@I [BIND-100] Finished micro-architecture binding.
+@I [HLS-111] Elapsed time: 0.32 seconds; current memory usage: 254 MB.
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Scheduling module 'bounding_box' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [SCHED-11] Starting scheduling ...
+@I [SCHED-61] Pipelining loop 'Loop 1.1'.
+@I [SCHED-61] Pipelining result: Target II: 1, Final II: 1, Depth: 6.
+@W [SCHED-21] Estimated clock period (12.3ns) exceeds the target (target clock period: 6.67ns, clock uncertainty: 0.833ns, effective delay budget: 5.83ns).
+@W [SCHED-21] The critical path consists of the following:
+	'load' operation ('left_1_load', top.cpp:312) on local variable 'left' (0 ns)
+	'icmp' operation ('tmp_8', top.cpp:312) (2.52 ns)
+	'and' operation ('tmp2', top.cpp:308) (1.37 ns)
+	'and' operation ('sel_tmp8', top.cpp:308) (1.37 ns)
+	'select' operation ('left', top.cpp:308) (1.37 ns)
+	'select' operation ('left', top.cpp:308) (1.37 ns)
+	'select' operation ('left', top.cpp:308) (1.37 ns)
+	'select' operation ('left', top.cpp:308) (1.37 ns)
+	'store' operation (top.cpp:308) of variable 'left' on local variable 'left' (1.57 ns)
+@I [SCHED-11] Finished scheduling.
+@I [HLS-111] Elapsed time: 0.5 seconds; current memory usage: 255 MB.
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Exploring micro-architecture for module 'bounding_box' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [BIND-100] Starting micro-architecture binding ...
+@I [BIND-101] Performing variable lifetime analysis.
+@I [BIND-101] Exploring resource sharing.
+@I [BIND-101] Binding resource limited operations ...
+@I [BIND-100] Finished micro-architecture binding.
+@I [HLS-111] Elapsed time: 0.06 seconds; current memory usage: 255 MB.
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Scheduling module 'compute' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [SCHED-11] Starting scheduling ...
+@I [SCHED-61] Pipelining loop 'Loop 1.1'.
+@I [SCHED-61] Pipelining result: Target II: 1, Final II: 1, Depth: 66.
+@W [SCHED-21] Estimated clock period (7.9ns) exceeds the target (target clock period: 6.67ns, clock uncertainty: 0.833ns, effective delay budget: 5.83ns).
+@W [SCHED-21] The critical path consists of the following:
+	'load' operation ('xx_load', top.cpp:378) on local variable 'xx' (0 ns)
+	'add' operation ('xx', top.cpp:378) (2.44 ns)
+	'icmp' operation ('tmp_14', top.cpp:379) (2.52 ns)
+	'select' operation ('xx', top.cpp:379) (1.37 ns)
+	'store' operation (top.cpp:379) of variable 'xx' on local variable 'xx' (1.57 ns)
+@I [SCHED-11] Finished scheduling.
+@I [HLS-111] Elapsed time: 0.26 seconds; current memory usage: 256 MB.
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Exploring micro-architecture for module 'compute' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [BIND-100] Starting micro-architecture binding ...
+@I [BIND-101] Performing variable lifetime analysis.
+@I [BIND-101] Exploring resource sharing.
+@I [BIND-101] Binding resource limited operations ...
+@I [BIND-100] Finished micro-architecture binding.
+@I [HLS-111] Elapsed time: 0.1 seconds; current memory usage: 257 MB.
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Scheduling module 'draw' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [SCHED-11] Starting scheduling ...
+@I [SCHED-61] Pipelining loop 'Loop 1.1'.
+@I [SCHED-61] Pipelining result: Target II: 1, Final II: 1, Depth: 5.
+@I [SCHED-11] Finished scheduling.
+@I [HLS-111] Elapsed time: 0.19 seconds; current memory usage: 258 MB.
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Exploring micro-architecture for module 'draw' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [BIND-100] Starting micro-architecture binding ...
+@I [BIND-101] Performing variable lifetime analysis.
+@I [BIND-101] Exploring resource sharing.
+@I [BIND-101] Binding resource limited operations ...
+@I [BIND-100] Finished micro-architecture binding.
+@I [HLS-111] Elapsed time: 0.05 seconds; current memory usage: 258 MB.
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Scheduling module 'Mat2AXIvideo_32_1080_1920_16_s' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [SCHED-11] Starting scheduling ...
+@I [SCHED-61] Pipelining loop 'Loop 1.1'.
+@I [SCHED-61] Pipelining result: Target II: 1, Final II: 1, Depth: 2.
+@I [SCHED-11] Finished scheduling.
+@I [HLS-111] Elapsed time: 0.11 seconds; current memory usage: 258 MB.
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Exploring micro-architecture for module 'Mat2AXIvideo_32_1080_1920_16_s' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [BIND-100] Starting micro-architecture binding ...
+@I [BIND-101] Performing variable lifetime analysis.
+@I [BIND-101] Exploring resource sharing.
+@I [BIND-101] Binding resource limited operations ...
+@I [BIND-100] Finished micro-architecture binding.
+@I [HLS-111] Elapsed time: 0.02 seconds; current memory usage: 259 MB.
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Scheduling module 'image_filter' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [SCHED-11] Starting scheduling ...
+@I [SCHED-11] Finished scheduling.
+@I [HLS-111] Elapsed time: 0.14 seconds; current memory usage: 259 MB.
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Exploring micro-architecture for module 'image_filter' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [BIND-100] Starting micro-architecture binding ...
+@I [BIND-101] Performing variable lifetime analysis.
+@I [BIND-101] Exploring resource sharing.
+@I [BIND-101] Binding resource limited operations ...
+@I [BIND-100] Finished micro-architecture binding.
+@I [HLS-111] Elapsed time: 0.89 seconds; current memory usage: 262 MB.
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Generating RTL for module 'init' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [RTGEN-100] Finished creating RTL model for 'init'.
+@I [HLS-111] Elapsed time: 0.35 seconds; current memory usage: 263 MB.
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Generating RTL for module 'init_1' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [RTGEN-100] Finished creating RTL model for 'init_1'.
+@I [HLS-111] Elapsed time: 0.03 seconds; current memory usage: 263 MB.
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Generating RTL for module 'init_1_1' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [RTGEN-100] Finished creating RTL model for 'init_1_1'.
+@I [HLS-111] Elapsed time: 0.01 seconds; current memory usage: 263 MB.
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Generating RTL for module 'init_2' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [RTGEN-100] Finished creating RTL model for 'init_2'.
+@I [HLS-111] Elapsed time: 0.02 seconds; current memory usage: 263 MB.
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Generating RTL for module 'init_3' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [RTGEN-100] Finished creating RTL model for 'init_3'.
+@I [HLS-111] Elapsed time: 0.01 seconds; current memory usage: 263 MB.
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Generating RTL for module 'init_4' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [RTGEN-100] Finished creating RTL model for 'init_4'.
+@I [HLS-111] Elapsed time: 0.03 seconds; current memory usage: 264 MB.
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Generating RTL for module 'init_5' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [RTGEN-100] Finished creating RTL model for 'init_5'.
+@I [HLS-111] Elapsed time: 0.01 seconds; current memory usage: 264 MB.
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Generating RTL for module 'init_1_2' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [RTGEN-100] Finished creating RTL model for 'init_1_2'.
+@I [HLS-111] Elapsed time: 0.01 seconds; current memory usage: 264 MB.
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Generating RTL for module 'AXIvideo2Mat_32_1080_1920_16_s' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [RTGEN-100] Finished creating RTL model for 'AXIvideo2Mat_32_1080_1920_16_s'.
+@I [HLS-111] Elapsed time: 0.03 seconds; current memory usage: 264 MB.
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Generating RTL for module 'rgb2bw' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [RTGEN-100] Finished creating RTL model for 'rgb2bw'.
+@I [HLS-111] Elapsed time: 0.09 seconds; current memory usage: 266 MB.
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Generating RTL for module 'median_filter' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [RTGEN-100] Finished creating RTL model for 'median_filter'.
+@I [HLS-111] Elapsed time: 0.26 seconds; current memory usage: 270 MB.
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Generating RTL for module 'median_filter_1' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [RTGEN-100] Finished creating RTL model for 'median_filter_1'.
+@I [HLS-111] Elapsed time: 1 seconds; current memory usage: 284 MB.
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Generating RTL for module 'bounding_box' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [RTGEN-100] Finished creating RTL model for 'bounding_box'.
+@I [HLS-111] Elapsed time: 0.81 seconds; current memory usage: 294 MB.
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Generating RTL for module 'compute' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [RTGEN-100] Module generated: image_filter_urem_26ns_26ns_26_29|image_filter_urem_26ns_26ns_26_29_U50.
+@I [RTGEN-100] Module generated: image_filter_urem_26ns_26ns_26_29|image_filter_urem_26ns_26ns_26_29_U51.
+@I [RTGEN-100] Finished creating RTL model for 'compute'.
+@I [HLS-111] Elapsed time: 0.28 seconds; current memory usage: 298 MB.
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Generating RTL for module 'draw' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [RTGEN-100] Finished creating RTL model for 'draw'.
+@I [HLS-111] Elapsed time: 0.28 seconds; current memory usage: 302 MB.
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Generating RTL for module 'Mat2AXIvideo_32_1080_1920_16_s' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [RTGEN-100] Finished creating RTL model for 'Mat2AXIvideo_32_1080_1920_16_s'.
+@I [HLS-111] Elapsed time: 0.16 seconds; current memory usage: 304 MB.
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Generating RTL for module 'image_filter' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [RTGEN-500] Setting interface mode on port 'image_filter/input_V_data_V' to 'ap_fifo'.
+@I [RTGEN-500] Setting interface mode on port 'image_filter/input_V_keep_V' to 'ap_fifo'.
+@I [RTGEN-500] Setting interface mode on port 'image_filter/input_V_strb_V' to 'ap_fifo'.
+@I [RTGEN-500] Setting interface mode on port 'image_filter/input_V_user_V' to 'ap_fifo'.
+@I [RTGEN-500] Setting interface mode on port 'image_filter/input_V_last_V' to 'ap_fifo'.
+@I [RTGEN-500] Setting interface mode on port 'image_filter/input_V_id_V' to 'ap_fifo'.
+@I [RTGEN-500] Setting interface mode on port 'image_filter/input_V_dest_V' to 'ap_fifo'.
+@I [RTGEN-500] Setting interface mode on port 'image_filter/output_V_data_V' to 'ap_fifo'.
+@I [RTGEN-500] Setting interface mode on port 'image_filter/output_V_keep_V' to 'ap_fifo'.
+@I [RTGEN-500] Setting interface mode on port 'image_filter/output_V_strb_V' to 'ap_fifo'.
+@I [RTGEN-500] Setting interface mode on port 'image_filter/output_V_user_V' to 'ap_fifo'.
+@I [RTGEN-500] Setting interface mode on port 'image_filter/output_V_last_V' to 'ap_fifo'.
+@I [RTGEN-500] Setting interface mode on port 'image_filter/output_V_id_V' to 'ap_fifo'.
+@I [RTGEN-500] Setting interface mode on port 'image_filter/output_V_dest_V' to 'ap_fifo'.
+@I [RTGEN-500] Setting interface mode on port 'image_filter/rows' to 'ap_stable'.
+@I [RTGEN-500] Setting interface mode on port 'image_filter/cols' to 'ap_stable'.
+@I [RTGEN-100] Finished creating RTL model for 'image_filter'.
+@I [HLS-111] Elapsed time: 0.05 seconds; current memory usage: 307 MB.
+@I [RTMG-278] Implementing memory 'median_filter_lineBuffer_val_0_ram' using block RAMs.
+@I [RTMG-282] Generating pipelined core: 'image_filter_urem_26ns_26ns_26_29_div'
+@I [RTMG-285] Implementing FIFO 'FIFO_image_filter_src_rows_V' using Shift Registers.
+@I [RTMG-285] Implementing FIFO 'FIFO_image_filter_src_rows_V_channel' using Shift Registers.
+@I [RTMG-285] Implementing FIFO 'FIFO_image_filter_src_cols_V' using Shift Registers.
+@I [RTMG-285] Implementing FIFO 'FIFO_image_filter_src_cols_V_channel' using Shift Registers.
+@I [RTMG-285] Implementing FIFO 'FIFO_image_filter_bw_rows_V' using Shift Registers.
+@I [RTMG-285] Implementing FIFO 'FIFO_image_filter_bw_cols_V' using Shift Registers.
+@I [RTMG-285] Implementing FIFO 'FIFO_image_filter_medianImage_rows_V' using Shift Registers.
+@I [RTMG-285] Implementing FIFO 'FIFO_image_filter_medianImage_cols_V' using Shift Registers.
+@I [RTMG-285] Implementing FIFO 'FIFO_image_filter_medianImage2_rows_V' using Shift Registers.
+@I [RTMG-285] Implementing FIFO 'FIFO_image_filter_medianImage2_cols_V' using Shift Registers.
+@I [RTMG-285] Implementing FIFO 'FIFO_image_filter_medianImage3_rows_V' using Shift Registers.
+@I [RTMG-285] Implementing FIFO 'FIFO_image_filter_medianImage3_cols_V' using Shift Registers.
+@I [RTMG-285] Implementing FIFO 'FIFO_image_filter_medianImage4_rows_V' using Shift Registers.
+@I [RTMG-285] Implementing FIFO 'FIFO_image_filter_medianImage4_cols_V' using Shift Registers.
+@I [RTMG-285] Implementing FIFO 'FIFO_image_filter_result_rows_V' using Shift Registers.
+@I [RTMG-285] Implementing FIFO 'FIFO_image_filter_result_cols_V' using Shift Registers.
+@I [HLS-10] Finished generating all RTL models.
+@I [WSYSC-301] Generating RTL SystemC for 'image_filter'.
+@I [WVHDL-304] Generating RTL VHDL for 'image_filter'.
+@I [WVLOG-307] Generating RTL Verilog for 'image_filter'.
+@I [IMPL-8] Exporting RTL as an IP in IP-XACT.
+@I [IMPL-200] Port 'input_V_data_V' is mapped to 'TDATA' by default.
+@I [IMPL-200] Port 'input_V_keep_V' is mapped to 'TKEEP' by default.
+@I [IMPL-200] Port 'input_V_strb_V' is mapped to 'TSTRB' by default.
+@I [IMPL-200] Port 'input_V_user_V' is mapped to 'TUSER' by default.
+@I [IMPL-200] Port 'input_V_last_V' is mapped to 'TLAST' by default.
+@I [IMPL-200] Port 'input_V_id_V' is mapped to 'TID' by default.
+@I [IMPL-200] Port 'input_V_dest_V' is mapped to 'TDEST' by default.
+@I [IMPL-200] Port 'output_V_data_V' is mapped to 'TDATA' by default.
+@I [IMPL-200] Port 'output_V_keep_V' is mapped to 'TKEEP' by default.
+@I [IMPL-200] Port 'output_V_strb_V' is mapped to 'TSTRB' by default.
+@I [IMPL-200] Port 'output_V_user_V' is mapped to 'TUSER' by default.
+@I [IMPL-200] Port 'output_V_last_V' is mapped to 'TLAST' by default.
+@I [IMPL-200] Port 'output_V_id_V' is mapped to 'TID' by default.
+@I [IMPL-200] Port 'output_V_dest_V' is mapped to 'TDEST' by default.
+
+****** Vivado v2013.2 (64-bit)
+  **** Build 272601 by xbuild on Sat Jun 15 11:11:11 MDT 2013
+    ** Copyright 1986-1999, 2001-2013 Xilinx, Inc. All Rights Reserved.
+
+INFO: [Common 17-78] Attempting to get a license: Implementation
+INFO: [Common 17-81] Feature available: Implementation
+INFO: [Common 17-78] Attempting to get a license: Synthesis
+INFO: [Common 17-81] Feature available: Synthesis
+INFO: [Device 21-36] Loading parts and site information from /opt/xilinx/Vivado/2013.2/data/parts/arch.xml
+Parsing RTL primitives file [/opt/xilinx/Vivado/2013.2/data/parts/xilinx/rtl/prims/rtl_prims.xml]
+Finished parsing RTL primitives file [/opt/xilinx/Vivado/2013.2/data/parts/xilinx/rtl/prims/rtl_prims.xml]
+INFO: [Common 17-362] Using Tcl App repository from '/opt/xilinx/Vivado/2013.2/data/XilinxTclStore'.
+INFO: [Common 17-364] Updating Tcl app persistent manifest '/home/bjr96/.Xilinx/Vivado/tclapp/manifest.tcl'
+source run_ippack.tcl -notrace
+INFO: [Common 17-206] Exiting Vivado at Tue Dec  6 11:23:47 2016...
+@I [HLS-112] Total elapsed time: 247.820 seconds; peak memory usage: 307 MB.
+@I [LIC-101] Checked in feature [HLS]

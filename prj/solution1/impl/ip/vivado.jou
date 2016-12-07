@@ -1,0 +1,9 @@
+#-----------------------------------------------------------
+# Vivado v2013.2 (64-bit)
+# Build 272601 by xbuild on Sat Jun 15 11:11:11 MDT 2013
+# Start of session at: Tue Dec  6 11:23:41 2016
+# Process ID: 5749
+# Log file: /home/bjr96/final_project/xapp1167_vivado/sw/finalProject/prj/solution1/impl/ip/vivado.log
+# Journal file: /home/bjr96/final_project/xapp1167_vivado/sw/finalProject/prj/solution1/impl/ip/vivado.jou
+#-----------------------------------------------------------
+source run_ippack.tcl -notrace

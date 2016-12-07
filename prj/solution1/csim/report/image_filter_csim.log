@@ -1,0 +1,10 @@
+make[1]: Entering directory `/home/bjr96/final_project/xapp1167_vivado/sw/finalProject/prj/solution1/csim/build'
+   Compiling /home/bjr96/final_project/xapp1167_vivado/sw/finalProject/opencv_top.cpp in debug mode
+   Compiling /home/bjr96/final_project/xapp1167_vivado/sw/finalProject/test.cpp in debug mode
+   Compiling /home/bjr96/final_project/xapp1167_vivado/sw/finalProject/top.cpp in debug mode
+   Generating csim.exe
+make[1]: Leaving directory `/home/bjr96/final_project/xapp1167_vivado/sw/finalProject/prj/solution1/csim/build'
+Bounding Boxtop: 123, bottom: 1015, left:520, right:1447
+
+Output Generated!
+@I [SIM-1] CSim done with 0 errors.

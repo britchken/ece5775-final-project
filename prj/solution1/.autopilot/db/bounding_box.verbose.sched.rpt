@@ -1,0 +1,574 @@
+
+
+================================================================
+== Vivado HLS Report for 'bounding_box'
+================================================================
+* Date:           Tue Dec  6 11:23:21 2016
+
+* Version:        2013.2 (build date: Thu Jun 13 16:07:59 PM 2013)
+* Project:        prj
+* Solution:       solution1
+* Product family: zynq zynq_fpv6 
+* Target device:  xc7z020clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +---------+-------+----------+------------+
+    |  Clock  | Target| Estimated| Uncertainty|
+    +---------+-------+----------+------------+
+    |default  |   6.67|     12.31|        0.83|
+    +---------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |    ?|    ?|    ?|    ?|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-------------+-----+-----+----------+-----------+-----------+------+----------+
+        |             |  Latency  | Iteration|  Initiation Interval  | Trip |          |
+        |  Loop Name  | min | max |  Latency |  achieved |   target  | Count| Pipelined|
+        +-------------+-----+-----+----------+-----------+-----------+------+----------+
+        |- Loop 1     |    ?|    ?|         ?|          -|          -|     ?|    no    |
+        | + Loop 1.1  |    ?|    ?|         6|          1|          1|     ?|    yes   |
+        +-------------+-----+-----+----------+-----------+-----------+------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+-------+
+|       Name      | BRAM_18K| DSP48E|   FF   |  LUT  |
++-----------------+---------+-------+--------+-------+
+|Expression       |        -|      -|       -|      -|
+|FIFO             |        -|      -|       -|      -|
+|Instance         |        -|      -|       -|      -|
+|Memory           |        -|      -|       -|      -|
+|Multiplexer      |        -|      -|       -|      -|
+|Register         |        -|      -|       -|      -|
+|ShiftMemory      |        -|      -|       -|      -|
++-----------------+---------+-------+--------+-------+
+|Total            |        0|      0|       0|      0|
++-----------------+---------+-------+--------+-------+
+|Available        |      280|    220|  106400|  53200|
++-----------------+---------+-------+--------+-------+
+|Utilization (%)  |        0|      0|       0|      0|
++-----------------+---------+-------+--------+-------+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Shift register: 
+    N/A
+
+    * Expression: 
+    N/A
+
+    * Multiplexer: 
+    N/A
+
+    * Register: 
+    N/A
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
+N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 2
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 1, depth = 6
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states: 8
+* Pipeline: 1
+  Pipeline-0: II = 1, D = 6, States = { 3 4 5 6 7 8 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / (!exitcond1)
+3 --> 
+	2  / (exitcond)
+	4  / (!exitcond)
+4 --> 
+	5  / true
+5 --> 
+	6  / true
+6 --> 
+	7  / true
+7 --> 
+	8  / true
+8 --> 
+	3  / true
+* FSM state operations: 
+
+ <State 1>: 3.42ns
+ST_1: empty [1/1] 0.00ns
+entry:0  %empty = call i32 (...)* @_ssdm_op_SpecFifo(i8* %dst_data_stream_0_V, [8 x i8]* @str142, i32 0, i32 0, i32 0, [8 x i8]* @str142) ; <i32> [#uses=0]
+
+ST_1: empty_127 [1/1] 0.00ns
+entry:1  %empty_127 = call i32 (...)* @_ssdm_op_SpecFifo(i8* %src_data_stream_0_V, [8 x i8]* @str139, i32 0, i32 0, i32 0, [8 x i8]* @str139) ; <i32> [#uses=0]
+
+ST_1: empty_128 [1/1] 0.00ns
+entry:2  %empty_128 = call i32 (...)* @_ssdm_op_SpecFifo(i32* %bb_right_V, [8 x i8]* @str84, i32 0, i32 0, i32 0, [8 x i8]* @str84) ; <i32> [#uses=0]
+
+ST_1: empty_129 [1/1] 0.00ns
+entry:3  %empty_129 = call i32 (...)* @_ssdm_op_SpecFifo(i32* %bb_left_V, [8 x i8]* @str81, i32 0, i32 0, i32 0, [8 x i8]* @str81) ; <i32> [#uses=0]
+
+ST_1: empty_130 [1/1] 0.00ns
+entry:4  %empty_130 = call i32 (...)* @_ssdm_op_SpecFifo(i32* %bb_bottom_V, [8 x i8]* @str78, i32 0, i32 0, i32 0, [8 x i8]* @str78) ; <i32> [#uses=0]
+
+ST_1: empty_131 [1/1] 0.00ns
+entry:5  %empty_131 = call i32 (...)* @_ssdm_op_SpecFifo(i32* %bb_top_V, [8 x i8]* @str75, i32 0, i32 0, i32 0, [8 x i8]* @str75) ; <i32> [#uses=0]
+
+ST_1: src_cols_V_read_2 [1/1] 0.00ns
+entry:6  %src_cols_V_read_2 = call i12 @_ssdm_op_WireRead.i12(i12 %src_cols_V_read) ; <i12> [#uses=4]
+
+ST_1: src_rows_V_read_2 [1/1] 0.00ns
+entry:7  %src_rows_V_read_2 = call i12 @_ssdm_op_WireRead.i12(i12 %src_rows_V_read) ; <i12> [#uses=4]
+
+ST_1: guard_variable_for_bounding_box_Mat_1080_1920_0_Mat_1080_1920_0_stream_unsigned_int_stream_uns [1/1] 0.00ns
+entry:8  %guard_variable_for_bounding_box_Mat_1080_1920_0_Mat_1080_1920_0_stream_unsigned_int_stream_uns = load i64* @guard_variable_for_bounding_box_Mat_1080_1920_0_Mat_1080_1920_0_stream_unsigned_int_stream_uns ; <i64> [#uses=2]
+
+ST_1: tmp [1/1] 0.00ns
+entry:9  %tmp = trunc i64 %guard_variable_for_bounding_box_Mat_1080_1920_0_Mat_1080_1920_0_stream_unsigned_int_stream_uns to i8 ; <i8> [#uses=1]
+
+ST_1: tmp_s [1/1] 2.00ns
+entry:10  %tmp_s = icmp eq i8 %tmp, 0                     ; <i1> [#uses=1]
+
+ST_1: stg_20 [1/1] 0.00ns
+entry:11  br i1 %tmp_s, label %codeRepl1, label %bb1
+
+ST_1: tmp_47_i_cast [1/1] 0.00ns
+codeRepl1:0  %tmp_47_i_cast = zext i12 %src_rows_V_read_2 to i13 ; <i13> [#uses=1]
+
+ST_1: tmp_48_i [1/1] 1.84ns
+codeRepl1:1  %tmp_48_i = add i13 %tmp_47_i_cast, -1          ; <i13> [#uses=1]
+
+ST_1: tmp_48_i_cast [1/1] 0.00ns
+codeRepl1:2  %tmp_48_i_cast = sext i13 %tmp_48_i to i32      ; <i32> [#uses=1]
+
+ST_1: stg_24 [1/1] 1.57ns
+codeRepl1:3  store i32 %tmp_48_i_cast, i32* @p_bottom, align 4
+
+ST_1: tmp_11 [1/1] 0.00ns
+codeRepl1:4  %tmp_11 = call i64 @_ssdm_op_PartSet.i64.i64.i8.i64.i64(i64 %guard_variable_for_bounding_box_Mat_1080_1920_0_Mat_1080_1920_0_stream_unsigned_int_stream_uns, i8 1, i64 0, i64 7) ; <i64> [#uses=1]
+
+ST_1: stg_26 [1/1] 0.00ns
+codeRepl1:5  store i64 %tmp_11, i64* @guard_variable_for_bounding_box_Mat_1080_1920_0_Mat_1080_1920_0_stream_unsigned_int_stream_uns
+
+ST_1: stg_27 [1/1] 0.00ns
+codeRepl1:6  br label %bb1
+
+ST_1: guard_variable_for_bounding_box_Mat_1080_1920_0_Mat_1080_1920_0_stream_unsigned_int_stream_uns_1 [1/1] 0.00ns
+bb1:0  %guard_variable_for_bounding_box_Mat_1080_1920_0_Mat_1080_1920_0_stream_unsigned_int_stream_uns_1 = load i64* @guard_variable_for_bounding_box_Mat_1080_1920_0_Mat_1080_1920_0_stream_unsigned_int_stream_uns_1 ; <i64> [#uses=2]
+
+ST_1: tmp_12 [1/1] 0.00ns
+bb1:1  %tmp_12 = trunc i64 %guard_variable_for_bounding_box_Mat_1080_1920_0_Mat_1080_1920_0_stream_unsigned_int_stream_uns_1 to i8 ; <i8> [#uses=1]
+
+ST_1: tmp_3 [1/1] 2.00ns
+bb1:2  %tmp_3 = icmp eq i8 %tmp_12, 0                  ; <i1> [#uses=1]
+
+ST_1: stg_31 [1/1] 0.00ns
+bb1:3  br i1 %tmp_3, label %codeRepl, label %bb3
+
+ST_1: tmp_50_i_cast [1/1] 0.00ns
+codeRepl:0  %tmp_50_i_cast = zext i12 %src_cols_V_read_2 to i13 ; <i13> [#uses=1]
+
+ST_1: tmp_51_i [1/1] 1.84ns
+codeRepl:1  %tmp_51_i = add i13 %tmp_50_i_cast, -1          ; <i13> [#uses=1]
+
+ST_1: tmp_51_i_cast [1/1] 0.00ns
+codeRepl:2  %tmp_51_i_cast = sext i13 %tmp_51_i to i32      ; <i32> [#uses=1]
+
+ST_1: stg_35 [1/1] 1.57ns
+codeRepl:3  store i32 %tmp_51_i_cast, i32* @p_right, align 4
+
+ST_1: tmp_13 [1/1] 0.00ns
+codeRepl:4  %tmp_13 = call i64 @_ssdm_op_PartSet.i64.i64.i8.i64.i64(i64 %guard_variable_for_bounding_box_Mat_1080_1920_0_Mat_1080_1920_0_stream_unsigned_int_stream_uns_1, i8 1, i64 0, i64 7) ; <i64> [#uses=1]
+
+ST_1: stg_37 [1/1] 0.00ns
+codeRepl:5  store i64 %tmp_13, i64* @guard_variable_for_bounding_box_Mat_1080_1920_0_Mat_1080_1920_0_stream_unsigned_int_stream_uns_1
+
+ST_1: stg_38 [1/1] 0.00ns
+codeRepl:6  br label %bb3
+
+ST_1: right [1/1] 0.00ns
+bb3:0  %right = alloca i32                             ; <i32*> [#uses=3]
+
+ST_1: left_1 [1/1] 0.00ns
+bb3:1  %left_1 = alloca i32                            ; <i32*> [#uses=3]
+
+ST_1: bottom [1/1] 0.00ns
+bb3:2  %bottom = alloca i32                            ; <i32*> [#uses=3]
+
+ST_1: top_2 [1/1] 0.00ns
+bb3:3  %top_2 = alloca i32                             ; <i32*> [#uses=3]
+
+ST_1: top [1/1] 0.00ns
+bb3:4  %top = zext i12 %src_rows_V_read_2 to i32       ; <i32> [#uses=1]
+
+ST_1: left [1/1] 0.00ns
+bb3:5  %left = zext i12 %src_cols_V_read_2 to i32      ; <i32> [#uses=1]
+
+ST_1: retval_i_cast [1/1] 0.00ns
+bb3:6  %retval_i_cast = zext i12 %src_rows_V_read_2 to i13 ; <i13> [#uses=2]
+
+ST_1: op2_assign_8 [1/1] 1.84ns
+bb3:7  %op2_assign_8 = add i13 %retval_i_cast, -1      ; <i13> [#uses=1]
+
+ST_1: retval_i5_cast [1/1] 0.00ns
+bb3:8  %retval_i5_cast = zext i12 %src_cols_V_read_2 to i13 ; <i13> [#uses=2]
+
+ST_1: op2_assign_9 [1/1] 1.84ns
+bb3:9  %op2_assign_9 = add i13 %retval_i5_cast, -1     ; <i13> [#uses=1]
+
+ST_1: op2_assign [1/1] 1.84ns
+bb3:10  %op2_assign = add i13 %retval_i5_cast, -205     ; <i13> [#uses=1]
+
+ST_1: op2_assign_3 [1/1] 1.84ns
+bb3:11  %op2_assign_3 = add i13 %retval_i_cast, -64     ; <i13> [#uses=1]
+
+ST_1: stg_51 [1/1] 1.57ns
+bb3:12  store i32 %top, i32* %top_2
+
+ST_1: stg_52 [1/1] 1.57ns
+bb3:13  store i32 0, i32* %bottom
+
+ST_1: stg_53 [1/1] 1.57ns
+bb3:14  store i32 %left, i32* %left_1
+
+ST_1: stg_54 [1/1] 1.57ns
+bb3:15  store i32 0, i32* %right
+
+ST_1: stg_55 [1/1] 1.39ns
+bb3:16  br label %bb39
+
+
+ <State 2>: 3.55ns
+ST_2: t_V_5 [1/1] 0.00ns
+bb39:0  %t_V_5 = phi i12 [ 0, %bb3 ], [ %i_V, %bb36 ]   ; <i12> [#uses=5]
+
+ST_2: exitcond1 [1/1] 2.14ns
+bb39:1  %exitcond1 = icmp eq i12 %t_V_5, %src_rows_V_read_2 ; <i1> [#uses=1]
+
+ST_2: i_V [1/1] 1.84ns
+bb39:2  %i_V = add i12 %t_V_5, 1                        ; <i12> [#uses=1]
+
+ST_2: stg_59 [1/1] 0.00ns
+bb39:3  br i1 %exitcond1, label %return, label %bb36.preheader
+
+ST_2: tmp_45_cast [1/1] 0.00ns
+bb36.preheader:0  %tmp_45_cast = zext i12 %t_V_5 to i13           ; <i13> [#uses=2]
+
+ST_2: not4 [1/1] 2.18ns
+bb36.preheader:1  %not4 = icmp eq i13 %tmp_45_cast, %op2_assign_8 ; <i1> [#uses=1]
+
+ST_2: not5 [1/1] 2.18ns
+bb36.preheader:2  %not5 = icmp ult i13 %tmp_45_cast, %op2_assign_3 ; <i1> [#uses=2]
+
+ST_2: bottom_6 [1/1] 0.00ns
+bb36.preheader:3  %bottom_6 = zext i12 %t_V_5 to i32              ; <i32> [#uses=3]
+
+ST_2: sel_tmp3 [1/1] 1.37ns
+bb36.preheader:4  %sel_tmp3 = xor i1 %not5, true                  ; <i1> [#uses=1]
+
+ST_2: stg_65 [1/1] 1.39ns
+bb36.preheader:5  br label %bb36
+
+ST_2: stg_66 [1/1] 0.00ns
+return:0  ret void
+
+
+ <State 3>: 3.55ns
+ST_3: t_V [1/1] 0.00ns
+bb36:0  %t_V = phi i12 [ %j_V, %bb35 ], [ 0, %bb36.preheader ] ; <i12> [#uses=5]
+
+ST_3: exitcond [1/1] 2.14ns
+bb36:1  %exitcond = icmp eq i12 %t_V, %src_cols_V_read_2 ; <i1> [#uses=1]
+
+ST_3: j_V [1/1] 1.84ns
+bb36:2  %j_V = add i12 %t_V, 1                          ; <i12> [#uses=1]
+
+ST_3: stg_70 [1/1] 0.00ns
+bb36:3  br i1 %exitcond, label %bb39, label %bb5_ifconv
+
+ST_3: tmp_47_cast [1/1] 0.00ns
+bb5_ifconv:10  %tmp_47_cast = zext i12 %t_V to i13             ; <i13> [#uses=2]
+
+ST_3: not9 [1/1] 2.18ns
+bb5_ifconv:11  %not9 = icmp ult i13 %tmp_47_cast, %op2_assign  ; <i1> [#uses=2]
+
+ST_3: not6 [1/1] 2.18ns
+bb5_ifconv:42  %not6 = icmp eq i13 %tmp_47_cast, %op2_assign_9 ; <i1> [#uses=1]
+
+ST_3: or_cond1 [1/1] 1.37ns
+bb5_ifconv:43  %or_cond1 = and i1 %not4, %not6                 ; <i1> [#uses=1]
+
+ST_3: stg_75 [1/1] 0.00ns
+bb5_ifconv:44  br i1 %or_cond1, label %bb34, label %bb35
+
+
+ <State 4>: 1.70ns
+ST_4: tmp_16 [1/1] 1.70ns
+bb5_ifconv:6  %tmp_16 = call i8 @_ssdm_op_FifoRead.volatile.i8P(i8* %src_data_stream_0_V) ; <i8> [#uses=2]
+
+
+ <State 5>: 4.88ns
+ST_5: p_not [1/1] 2.00ns
+bb5_ifconv:7  %p_not = icmp ne i8 %tmp_16, 0                  ; <i1> [#uses=2]
+
+ST_5: not [1/1] 2.14ns
+bb5_ifconv:8  %not = icmp ult i12 %t_V, 206                   ; <i1> [#uses=2]
+
+ST_5: or_cond [1/1] 1.37ns
+bb5_ifconv:9  %or_cond = or i1 %p_not, %not                   ; <i1> [#uses=5]
+
+ST_5: sel_tmp1_demorgan [1/1] 1.37ns
+bb5_ifconv:25  %sel_tmp1_demorgan = or i1 %p_not, %not         ; <i1> [#uses=1]
+
+ST_5: sel_tmp1 [1/1] 1.37ns
+bb5_ifconv:26  %sel_tmp1 = xor i1 %sel_tmp1_demorgan, true     ; <i1> [#uses=1]
+
+
+ <State 6>: 9.57ns
+ST_6: right_load [1/1] 0.00ns
+bb5_ifconv:0  %right_load = load i32* %right                  ; <i32> [#uses=5]
+
+ST_6: bottom_load [1/1] 0.00ns
+bb5_ifconv:2  %bottom_load = load i32* %bottom                ; <i32> [#uses=5]
+
+ST_6: tmp_5 [1/1] 2.52ns
+bb5_ifconv:12  %tmp_5 = icmp ugt i32 %bottom_6, %bottom_load   ; <i1> [#uses=1]
+
+ST_6: bottom_3 [1/1] 1.37ns
+bb5_ifconv:13  %bottom_3 = select i1 %tmp_5, i32 %bottom_6, i32 %bottom_load ; <i32> [#uses=1]
+
+ST_6: right_6 [1/1] 0.00ns
+bb5_ifconv:18  %right_6 = zext i12 %t_V to i32                 ; <i32> [#uses=4]
+
+ST_6: tmp_7 [1/1] 2.52ns
+bb5_ifconv:19  %tmp_7 = icmp ugt i32 %right_6, %right_load     ; <i1> [#uses=1]
+
+ST_6: right_3 [1/1] 1.37ns
+bb5_ifconv:20  %right_3 = select i1 %tmp_7, i32 %right_6, i32 %right_load ; <i32> [#uses=1]
+
+ST_6: sel_tmp9_demorgan [1/1] 1.37ns
+bb5_ifconv:23  %sel_tmp9_demorgan = or i1 %or_cond, %not9      ; <i1> [#uses=4]
+
+ST_6: sel_tmp2 [1/1] 1.37ns
+bb5_ifconv:27  %sel_tmp2 = and i1 %not9, %sel_tmp1             ; <i1> [#uses=2]
+
+ST_6: sel_tmp4 [1/1] 1.37ns
+bb5_ifconv:28  %sel_tmp4 = and i1 %sel_tmp2, %sel_tmp3         ; <i1> [#uses=4]
+
+ST_6: bottom_4 [1/1] 1.37ns
+bb5_ifconv:30  %bottom_4 = select i1 %or_cond, i32 %bottom_load, i32 %bottom_3 ; <i32> [#uses=1]
+
+ST_6: bottom_5 [1/1] 1.37ns
+bb5_ifconv:31  %bottom_5 = select i1 %sel_tmp9_demorgan, i32 %bottom_4, i32 %bottom_load ; <i32> [#uses=1]
+
+ST_6: bottom_1 [1/1] 1.37ns
+bb5_ifconv:32  %bottom_1 = select i1 %sel_tmp4, i32 %bottom_load, i32 %bottom_5 ; <i32> [#uses=2]
+
+ST_6: right_4 [1/1] 1.37ns
+bb5_ifconv:39  %right_4 = select i1 %or_cond, i32 %right_load, i32 %right_3 ; <i32> [#uses=1]
+
+ST_6: right_5 [1/1] 1.37ns
+bb5_ifconv:40  %right_5 = select i1 %sel_tmp9_demorgan, i32 %right_4, i32 %right_load ; <i32> [#uses=1]
+
+ST_6: right_1 [1/1] 1.37ns
+bb5_ifconv:41  %right_1 = select i1 %sel_tmp4, i32 %right_load, i32 %right_5 ; <i32> [#uses=2]
+
+ST_6: stg_98 [1/1] 1.57ns
+bb35:11  store i32 %bottom_1, i32* %bottom
+
+ST_6: stg_99 [1/1] 1.57ns
+bb35:13  store i32 %right_1, i32* %right
+
+
+ <State 7>: 12.31ns
+ST_7: left_1_load [1/1] 0.00ns
+bb5_ifconv:1  %left_1_load = load i32* %left_1                ; <i32> [#uses=5]
+
+ST_7: top_2_load [1/1] 0.00ns
+bb5_ifconv:3  %top_2_load = load i32* %top_2                  ; <i32> [#uses=5]
+
+ST_7: tmp_6 [1/1] 2.52ns
+bb5_ifconv:14  %tmp_6 = icmp ult i32 %bottom_6, %top_2_load    ; <i1> [#uses=1]
+
+ST_7: tmp_15 [1/1] 0.00ns
+bb5_ifconv:15  %tmp_15 = trunc i32 %top_2_load to i12          ; <i12> [#uses=1]
+
+ST_7: top_4 [1/1] 1.37ns
+bb5_ifconv:16  %top_4 = select i1 %tmp_6, i12 %t_V_5, i12 %tmp_15 ; <i12> [#uses=1]
+
+ST_7: top_5_cast [1/1] 0.00ns
+bb5_ifconv:17  %top_5_cast = zext i12 %top_4 to i32            ; <i32> [#uses=1]
+
+ST_7: tmp_8 [1/1] 2.52ns
+bb5_ifconv:21  %tmp_8 = icmp ult i32 %right_6, %left_1_load    ; <i1> [#uses=1]
+
+ST_7: sel_tmp6 [1/1] 1.37ns
+bb5_ifconv:22  %sel_tmp6 = select i1 %or_cond, i32 %top_2_load, i32 %top_5_cast ; <i32> [#uses=1]
+
+ST_7: sel_tmp [1/1] 1.37ns
+bb5_ifconv:24  %sel_tmp = select i1 %sel_tmp9_demorgan, i32 %sel_tmp6, i32 %top_2_load ; <i32> [#uses=1]
+
+ST_7: top_1 [1/1] 1.37ns
+bb5_ifconv:29  %top_1 = select i1 %sel_tmp4, i32 %top_2_load, i32 %sel_tmp ; <i32> [#uses=2]
+
+ST_7: tmp2 [1/1] 1.37ns
+bb5_ifconv:33  %tmp2 = and i1 %not5, %tmp_8                    ; <i1> [#uses=1]
+
+ST_7: sel_tmp8 [1/1] 1.37ns
+bb5_ifconv:34  %sel_tmp8 = and i1 %tmp2, %sel_tmp2             ; <i1> [#uses=1]
+
+ST_7: left_3 [1/1] 1.37ns
+bb5_ifconv:35  %left_3 = select i1 %sel_tmp8, i32 %right_6, i32 %left_1_load ; <i32> [#uses=1]
+
+ST_7: left_5 [1/1] 1.37ns
+bb5_ifconv:36  %left_5 = select i1 %or_cond, i32 %left_1_load, i32 %left_3 ; <i32> [#uses=1]
+
+ST_7: left_6 [1/1] 1.37ns
+bb5_ifconv:37  %left_6 = select i1 %sel_tmp9_demorgan, i32 %left_5, i32 %left_1_load ; <i32> [#uses=1]
+
+ST_7: left_4 [1/1] 1.37ns
+bb5_ifconv:38  %left_4 = select i1 %sel_tmp4, i32 %left_1_load, i32 %left_6 ; <i32> [#uses=2]
+
+ST_7: stg_116 [1/1] 0.00ns
+bb34:0  store i32 %top_1, i32* @p_top, align 4
+
+ST_7: stg_117 [1/1] 1.57ns
+bb34:1  store i32 %bottom_1, i32* @p_bottom, align 4
+
+ST_7: stg_118 [1/1] 0.00ns
+bb34:2  store i32 %left_4, i32* @p_left, align 4
+
+ST_7: stg_119 [1/1] 1.57ns
+bb34:3  store i32 %right_1, i32* @p_right, align 4
+
+ST_7: stg_120 [1/1] 0.00ns
+bb34:4  br label %bb35
+
+ST_7: stg_121 [1/1] 1.57ns
+bb35:10  store i32 %top_1, i32* %top_2
+
+ST_7: stg_122 [1/1] 1.57ns
+bb35:12  store i32 %left_4, i32* %left_1
+
+
+ <State 8>: 1.86ns
+ST_8: tmp_4 [1/1] 0.00ns
+bb5_ifconv:4  %tmp_4 = call i32 (...)* @_ssdm_op_SpecRegionBegin([14 x i8]* @p_str84) ; <i32> [#uses=1]
+
+ST_8: stg_124 [1/1] 0.00ns
+bb5_ifconv:5  call void (...)* @_ssdm_op_SpecPipeline(i32 1, i32 1, i32 1, [1 x i8]* @p_str62) nounwind
+
+ST_8: p_top_load [1/1] 0.00ns
+bb35:0  %p_top_load = load i32* @p_top, align 4         ; <i32> [#uses=1]
+
+ST_8: stg_126 [1/1] 1.86ns
+bb35:1  call void @_ssdm_op_FifoWrite.volatile.i32P(i32* %bb_top_V, i32 %p_top_load)
+
+ST_8: p_bottom_load [1/1] 0.00ns
+bb35:2  %p_bottom_load = load i32* @p_bottom, align 4   ; <i32> [#uses=1]
+
+ST_8: stg_128 [1/1] 1.86ns
+bb35:3  call void @_ssdm_op_FifoWrite.volatile.i32P(i32* %bb_bottom_V, i32 %p_bottom_load)
+
+ST_8: p_left_load [1/1] 0.00ns
+bb35:4  %p_left_load = load i32* @p_left, align 4       ; <i32> [#uses=1]
+
+ST_8: stg_130 [1/1] 1.86ns
+bb35:5  call void @_ssdm_op_FifoWrite.volatile.i32P(i32* %bb_left_V, i32 %p_left_load)
+
+ST_8: p_right_load [1/1] 0.00ns
+bb35:6  %p_right_load = load i32* @p_right, align 4     ; <i32> [#uses=1]
+
+ST_8: stg_132 [1/1] 1.86ns
+bb35:7  call void @_ssdm_op_FifoWrite.volatile.i32P(i32* %bb_right_V, i32 %p_right_load)
+
+ST_8: stg_133 [1/1] 1.70ns
+bb35:8  call void @_ssdm_op_FifoWrite.volatile.i8P(i8* %dst_data_stream_0_V, i8 %tmp_16)
+
+ST_8: empty_132 [1/1] 0.00ns
+bb35:9  %empty_132 = call i32 (...)* @_ssdm_op_SpecRegionEnd([14 x i8]* @p_str84, i32 %tmp_4) ; <i32> [#uses=0]
+
+ST_8: stg_135 [1/1] 0.00ns
+bb35:14  br label %bb36
+
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

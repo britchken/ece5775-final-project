@@ -1,0 +1,500 @@
+
+
+================================================================
+== Vivado HLS Report for 'draw'
+================================================================
+* Date:           Tue Dec  6 11:23:22 2016
+
+* Version:        2013.2 (build date: Thu Jun 13 16:07:59 PM 2013)
+* Project:        prj
+* Solution:       solution1
+* Product family: zynq zynq_fpv6 
+* Target device:  xc7z020clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +---------+-------+----------+------------+
+    |  Clock  | Target| Estimated| Uncertainty|
+    +---------+-------+----------+------------+
+    |default  |   6.67|      5.81|        0.83|
+    +---------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |    ?|    ?|    ?|    ?|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-------------+-----+-----+----------+-----------+-----------+------+----------+
+        |             |  Latency  | Iteration|  Initiation Interval  | Trip |          |
+        |  Loop Name  | min | max |  Latency |  achieved |   target  | Count| Pipelined|
+        +-------------+-----+-----+----------+-----------+-----------+------+----------+
+        |- Loop 1     |    ?|    ?|         ?|          -|          -|     ?|    no    |
+        | + Loop 1.1  |    ?|    ?|         5|          1|          1|     ?|    yes   |
+        +-------------+-----+-----+----------+-----------+-----------+------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+-------+
+|       Name      | BRAM_18K| DSP48E|   FF   |  LUT  |
++-----------------+---------+-------+--------+-------+
+|Expression       |        -|      -|       -|      -|
+|FIFO             |        -|      -|       -|      -|
+|Instance         |        -|      -|       -|      -|
+|Memory           |        -|      -|       -|      -|
+|Multiplexer      |        -|      -|       -|      -|
+|Register         |        -|      -|       -|      -|
+|ShiftMemory      |        -|      -|       -|      -|
++-----------------+---------+-------+--------+-------+
+|Total            |        0|      0|       0|      0|
++-----------------+---------+-------+--------+-------+
+|Available        |      280|    220|  106400|  53200|
++-----------------+---------+-------+--------+-------+
+|Utilization (%)  |        0|      0|       0|      0|
++-----------------+---------+-------+--------+-------+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Shift register: 
+    N/A
+
+    * Expression: 
+    N/A
+
+    * Multiplexer: 
+    N/A
+
+    * Register: 
+    N/A
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
+N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 2
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 1, depth = 5
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states: 7
+* Pipeline: 1
+  Pipeline-0: II = 1, D = 5, States = { 3 4 5 6 7 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / (!exitcond4)
+3 --> 
+	2  / (exitcond)
+	4  / (!exitcond)
+4 --> 
+	5  / true
+5 --> 
+	6  / true
+6 --> 
+	7  / true
+7 --> 
+	3  / true
+* FSM state operations: 
+
+ <State 1>: 1.66ns
+ST_1: pixel_out_val_2 [1/1] 0.00ns
+entry:0  %pixel_out_val_2 = alloca i8                    ; <i8*> [#uses=2]
+
+ST_1: pixel_out_val_0 [1/1] 0.00ns
+entry:1  %pixel_out_val_0 = alloca i8                    ; <i8*> [#uses=2]
+
+ST_1: pixel_out_val_1 [1/1] 0.00ns
+entry:2  %pixel_out_val_1 = alloca i8                    ; <i8*> [#uses=2]
+
+ST_1: state_loc_2 [1/1] 0.00ns
+entry:3  %state_loc_2 = alloca i32                       ; <i32*> [#uses=5]
+
+ST_1: empty [1/1] 0.00ns
+entry:4  %empty = call i32 (...)* @_ssdm_op_SpecFifo(i8* %dst_data_stream_2_V, [8 x i8]* @str154, i32 0, i32 0, i32 0, [8 x i8]* @str154) ; <i32> [#uses=0]
+
+ST_1: empty_145 [1/1] 0.00ns
+entry:5  %empty_145 = call i32 (...)* @_ssdm_op_SpecFifo(i8* %dst_data_stream_1_V, [8 x i8]* @str151, i32 0, i32 0, i32 0, [8 x i8]* @str151) ; <i32> [#uses=0]
+
+ST_1: empty_146 [1/1] 0.00ns
+entry:6  %empty_146 = call i32 (...)* @_ssdm_op_SpecFifo(i8* %dst_data_stream_0_V, [8 x i8]* @str148, i32 0, i32 0, i32 0, [8 x i8]* @str148) ; <i32> [#uses=0]
+
+ST_1: empty_147 [1/1] 0.00ns
+entry:7  %empty_147 = call i32 (...)* @_ssdm_op_SpecFifo(i8* %src_data_stream_0_V, [8 x i8]* @str145, i32 0, i32 0, i32 0, [8 x i8]* @str145) ; <i32> [#uses=0]
+
+ST_1: empty_148 [1/1] 0.00ns
+entry:8  %empty_148 = call i32 (...)* @_ssdm_op_SpecFifo(i32* %bb_right_V, [8 x i8]* @str96, i32 0, i32 0, i32 0, [8 x i8]* @str96) ; <i32> [#uses=0]
+
+ST_1: empty_149 [1/1] 0.00ns
+entry:9  %empty_149 = call i32 (...)* @_ssdm_op_SpecFifo(i32* %bb_left_V, [8 x i8]* @str93, i32 0, i32 0, i32 0, [8 x i8]* @str93) ; <i32> [#uses=0]
+
+ST_1: empty_150 [1/1] 0.00ns
+entry:10  %empty_150 = call i32 (...)* @_ssdm_op_SpecFifo(i32* %bb_bottom_V, [8 x i8]* @str90, i32 0, i32 0, i32 0, [8 x i8]* @str90) ; <i32> [#uses=0]
+
+ST_1: empty_151 [1/1] 0.00ns
+entry:11  %empty_151 = call i32 (...)* @_ssdm_op_SpecFifo(i32* %bb_top_V, [8 x i8]* @str87, i32 0, i32 0, i32 0, [8 x i8]* @str87) ; <i32> [#uses=0]
+
+ST_1: empty_152 [1/1] 0.00ns
+entry:12  %empty_152 = call i32 (...)* @_ssdm_op_SpecFifo(i1* %val_V_V, [8 x i8]* @str72, i32 0, i32 0, i32 0, [8 x i8]* @str72) ; <i32> [#uses=0]
+
+ST_1: empty_153 [1/1] 0.00ns
+entry:13  %empty_153 = call i32 (...)* @_ssdm_op_SpecFifo(i32* %err_V, [8 x i8]* @str69, i32 0, i32 0, i32 0, [8 x i8]* @str69) ; <i32> [#uses=0]
+
+ST_1: src_cols_V_read_4 [1/1] 0.00ns
+entry:14  %src_cols_V_read_4 = call i12 @_ssdm_op_WireRead.i12(i12 %src_cols_V_read) ; <i12> [#uses=1]
+
+ST_1: src_rows_V_read_4 [1/1] 0.00ns
+entry:15  %src_rows_V_read_4 = call i12 @_ssdm_op_WireRead.i12(i12 %src_rows_V_read) ; <i12> [#uses=1]
+
+ST_1: state_load [1/1] 0.00ns
+entry:16  %state_load = load i2* @state                   ; <i2> [#uses=1]
+
+ST_1: extLd [1/1] 0.00ns
+entry:17  %extLd = zext i2 %state_load to i32             ; <i32> [#uses=1]
+
+ST_1: stg_26 [1/1] 1.66ns
+entry:18  store i32 %extLd, i32* %state_loc_2
+
+ST_1: stg_27 [1/1] 1.39ns
+entry:19  br label %bb27
+
+
+ <State 2>: 2.14ns
+ST_2: t_V_7 [1/1] 0.00ns
+bb27:0  %t_V_7 = phi i12 [ 0, %entry ], [ %i_V, %bb24 ] ; <i12> [#uses=3]
+
+ST_2: exitcond4 [1/1] 2.14ns
+bb27:1  %exitcond4 = icmp eq i12 %t_V_7, %src_rows_V_read_4 ; <i1> [#uses=1]
+
+ST_2: i_V [1/1] 1.84ns
+bb27:2  %i_V = add i12 %t_V_7, 1                        ; <i12> [#uses=1]
+
+ST_2: stg_31 [1/1] 0.00ns
+bb27:3  br i1 %exitcond4, label %return, label %bb24.preheader
+
+ST_2: tmp_s [1/1] 0.00ns
+bb24.preheader:0  %tmp_s = zext i12 %t_V_7 to i32                 ; <i32> [#uses=2]
+
+ST_2: stg_33 [1/1] 1.39ns
+bb24.preheader:1  br label %bb24
+
+ST_2: stg_34 [1/1] 0.00ns
+return:0  ret void
+
+
+ <State 3>: 2.14ns
+ST_3: t_V [1/1] 0.00ns
+bb24:0  %t_V = phi i12 [ 0, %bb24.preheader ], [ %j_V, %bb8_ifconv ] ; <i12> [#uses=3]
+
+ST_3: exitcond [1/1] 2.14ns
+bb24:1  %exitcond = icmp eq i12 %t_V, %src_cols_V_read_4 ; <i1> [#uses=1]
+
+ST_3: j_V [1/1] 1.84ns
+bb24:2  %j_V = add i12 %t_V, 1                          ; <i12> [#uses=1]
+
+ST_3: stg_38 [1/1] 0.00ns
+bb24:3  br i1 %exitcond, label %bb27, label %bb1
+
+
+ <State 4>: 5.75ns
+ST_4: tmp [1/1] 1.70ns
+bb1:2  %tmp = call i8 @_ssdm_op_FifoRead.volatile.i8P(i8* %src_data_stream_0_V) ; <i8> [#uses=1]
+
+ST_4: tmp_29 [1/1] 1.86ns
+bb1:3  %tmp_29 = call i32 @_ssdm_op_FifoRead.volatile.i32P(i32* %err_V) ; <i32> [#uses=2]
+
+ST_4: tmp_V [1/1] 1.70ns
+bb1:4  %tmp_V = call i1 @_ssdm_op_FifoRead.volatile.i1P(i1* %val_V_V) ; <i1> [#uses=1]
+
+ST_4: tmp_30 [1/1] 1.86ns
+bb1:5  %tmp_30 = call i32 @_ssdm_op_FifoRead.volatile.i32P(i32* %bb_top_V) ; <i32> [#uses=1]
+
+ST_4: tmp_31 [1/1] 1.86ns
+bb1:6  %tmp_31 = call i32 @_ssdm_op_FifoRead.volatile.i32P(i32* %bb_bottom_V) ; <i32> [#uses=1]
+
+ST_4: tmp_32 [1/1] 1.86ns
+bb1:7  %tmp_32 = call i32 @_ssdm_op_FifoRead.volatile.i32P(i32* %bb_left_V) ; <i32> [#uses=1]
+
+ST_4: tmp_33 [1/1] 1.86ns
+bb1:8  %tmp_33 = call i32 @_ssdm_op_FifoRead.volatile.i32P(i32* %bb_right_V) ; <i32> [#uses=1]
+
+ST_4: stg_46 [1/1] 0.00ns
+bb1:9  br i1 %tmp_V, label %bb2, label %bb8_ifconv
+
+ST_4: state_loc_2_load [1/1] 0.00ns
+bb2:0  %state_loc_2_load = load i32* %state_loc_2      ; <i32> [#uses=2]
+
+ST_4: p_not [1/1] 2.52ns
+bb2:1  %p_not = icmp ne i32 %state_loc_2_load, 0       ; <i1> [#uses=1]
+
+ST_4: tmp_7 [1/1] 2.52ns
+bb2:2  %tmp_7 = icmp ugt i32 %tmp_29, 399              ; <i1> [#uses=1]
+
+ST_4: or_cond [1/1] 1.37ns
+bb2:3  %or_cond = or i1 %p_not, %tmp_7                 ; <i1> [#uses=1]
+
+ST_4: stg_51 [1/1] 0.00ns
+bb2:4  br i1 %or_cond, label %bb5, label %bb4
+
+ST_4: stg_52 [1/1] 1.30ns
+bb4:0  store i2 1, i2* @state
+
+ST_4: stg_53 [1/1] 1.66ns
+bb4:1  store i32 1, i32* %state_loc_2
+
+ST_4: stg_54 [1/1] 0.00ns
+bb4:2  br label %bb8_ifconv
+
+ST_4: tmp_8 [1/1] 2.52ns
+bb5:0  %tmp_8 = icmp eq i32 %state_loc_2_load, 1       ; <i1> [#uses=1]
+
+ST_4: tmp_1 [1/1] 2.52ns
+bb5:1  %tmp_1 = icmp ugt i32 %tmp_29, 400              ; <i1> [#uses=1]
+
+ST_4: or_cond5 [1/1] 1.37ns
+bb5:2  %or_cond5 = and i1 %tmp_8, %tmp_1               ; <i1> [#uses=1]
+
+ST_4: stg_58 [1/1] 0.00ns
+bb5:3  br i1 %or_cond5, label %bb7, label %bb8_ifconv
+
+ST_4: stg_59 [1/1] 1.30ns
+bb7:0  store i2 0, i2* @state
+
+ST_4: stg_60 [1/1] 1.66ns
+bb7:1  store i32 0, i32* %state_loc_2
+
+ST_4: stg_61 [1/1] 0.00ns
+bb7:2  br label %bb8_ifconv
+
+ST_4: tmp_2 [1/1] 0.00ns
+bb8_ifconv:4  %tmp_2 = zext i12 %t_V to i32                   ; <i32> [#uses=2]
+
+ST_4: tmp_3 [1/1] 2.52ns
+bb8_ifconv:5  %tmp_3 = icmp eq i32 %tmp_2, %tmp_32            ; <i1> [#uses=3]
+
+ST_4: tmp_4 [1/1] 2.52ns
+bb8_ifconv:6  %tmp_4 = icmp eq i32 %tmp_2, %tmp_33            ; <i1> [#uses=1]
+
+ST_4: tmp_5 [1/1] 2.52ns
+bb8_ifconv:7  %tmp_5 = icmp eq i32 %tmp_s, %tmp_30            ; <i1> [#uses=1]
+
+ST_4: tmp_6 [1/1] 2.52ns
+bb8_ifconv:8  %tmp_6 = icmp eq i32 %tmp_s, %tmp_31            ; <i1> [#uses=1]
+
+ST_4: tmp2 [1/1] 1.37ns
+bb8_ifconv:9  %tmp2 = or i1 %tmp_5, %tmp_6                    ; <i1> [#uses=1]
+
+ST_4: tmp_15 [1/1] 2.00ns
+bb8_ifconv:11  %tmp_15 = icmp eq i8 %tmp, -1                   ; <i1> [#uses=2]
+
+
+ <State 5>: 5.48ns
+ST_5: state_loc_2_load_1 [1/1] 0.00ns
+bb8_ifconv:3  %state_loc_2_load_1 = load i32* %state_loc_2    ; <i32> [#uses=2]
+
+ST_5: or_cond7 [1/1] 1.37ns
+bb8_ifconv:10  %or_cond7 = or i1 %tmp2, %tmp_4                 ; <i1> [#uses=2]
+
+ST_5: tmp_16 [1/1] 2.52ns
+bb8_ifconv:12  %tmp_16 = icmp eq i32 %state_loc_2_load_1, 1    ; <i1> [#uses=2]
+
+ST_5: tmp_17 [1/1] 2.52ns
+bb8_ifconv:13  %tmp_17 = icmp eq i32 %state_loc_2_load_1, 0    ; <i1> [#uses=1]
+
+ST_5: sel_tmp3_demorgan [1/1] 1.37ns
+bb8_ifconv:14  %sel_tmp3_demorgan = or i1 %tmp_3, %or_cond7    ; <i1> [#uses=2]
+
+ST_5: sel_tmp5_demorgan [1/1] 1.37ns
+bb8_ifconv:15  %sel_tmp5_demorgan = or i1 %sel_tmp3_demorgan, %tmp_15 ; <i1> [#uses=2]
+
+ST_5: sel_tmp [1/1] 1.37ns
+bb8_ifconv:24  %sel_tmp = xor i1 %sel_tmp3_demorgan, true      ; <i1> [#uses=1]
+
+ST_5: sel_tmp4 [1/1] 1.37ns
+bb8_ifconv:25  %sel_tmp4 = and i1 %tmp_15, %sel_tmp            ; <i1> [#uses=3]
+
+
+ <State 6>: 5.48ns
+ST_6: sel_tmp7_demorgan [1/1] 1.37ns
+bb8_ifconv:16  %sel_tmp7_demorgan = or i1 %sel_tmp5_demorgan, %tmp_16 ; <i1> [#uses=1]
+
+ST_6: sel_tmp7 [1/1] 1.37ns
+bb8_ifconv:17  %sel_tmp7 = xor i1 %sel_tmp7_demorgan, true     ; <i1> [#uses=1]
+
+ST_6: sel_tmp8 [1/1] 1.37ns
+bb8_ifconv:18  %sel_tmp8 = and i1 %tmp_17, %sel_tmp7           ; <i1> [#uses=1]
+
+ST_6: sel_tmp1 [1/1] 1.37ns
+bb8_ifconv:19  %sel_tmp1 = xor i1 %tmp_3, true                 ; <i1> [#uses=1]
+
+ST_6: sel_tmp2 [1/1] 1.37ns
+bb8_ifconv:20  %sel_tmp2 = and i1 %or_cond7, %sel_tmp1         ; <i1> [#uses=3]
+
+ST_6: sel_tmp9_cast [1/1] 1.37ns
+bb8_ifconv:21  %sel_tmp9_cast = select i1 %sel_tmp2, i8 100, i8 0 ; <i8> [#uses=1]
+
+ST_6: tmp_19 [1/1] 1.37ns
+bb8_ifconv:22  %tmp_19 = or i1 %sel_tmp2, %sel_tmp8            ; <i1> [#uses=3]
+
+ST_6: sel_tmp9 [1/1] 1.37ns
+bb8_ifconv:29  %sel_tmp9 = xor i1 %sel_tmp5_demorgan, true     ; <i1> [#uses=1]
+
+ST_6: sel_tmp10 [1/1] 1.37ns
+bb8_ifconv:30  %sel_tmp10 = and i1 %tmp_16, %sel_tmp9          ; <i1> [#uses=3]
+
+ST_6: sel_tmp14 [1/1] 1.37ns
+bb8_ifconv:36  %sel_tmp14 = select i1 %sel_tmp2, i8 100, i8 -1 ; <i8> [#uses=1]
+
+
+ <State 7>: 5.81ns
+ST_7: tmp_18 [1/1] 0.00ns
+bb1:0  %tmp_18 = call i32 (...)* @_ssdm_op_SpecRegionBegin([14 x i8]* @p_str78) ; <i32> [#uses=1]
+
+ST_7: stg_88 [1/1] 0.00ns
+bb1:1  call void (...)* @_ssdm_op_SpecPipeline(i32 1, i32 1, i32 1, [1 x i8]* @p_str62) nounwind
+
+ST_7: pixel_out_val_2_load [1/1] 0.00ns
+bb8_ifconv:0  %pixel_out_val_2_load = load i8* %pixel_out_val_2 ; <i8> [#uses=1]
+
+ST_7: pixel_out_val_0_load [1/1] 0.00ns
+bb8_ifconv:1  %pixel_out_val_0_load = load i8* %pixel_out_val_0 ; <i8> [#uses=1]
+
+ST_7: pixel_out_val_1_load [1/1] 0.00ns
+bb8_ifconv:2  %pixel_out_val_1_load = load i8* %pixel_out_val_1 ; <i8> [#uses=1]
+
+ST_7: sel_tmp3 [1/1] 1.37ns
+bb8_ifconv:23  %sel_tmp3 = select i1 %tmp_19, i8 %sel_tmp9_cast, i8 %pixel_out_val_1_load ; <i8> [#uses=1]
+
+ST_7: sel_tmp5 [1/1] 1.37ns
+bb8_ifconv:26  %sel_tmp5 = select i1 %sel_tmp4, i8 -1, i8 100  ; <i8> [#uses=2]
+
+ST_7: tmp_20 [1/1] 1.37ns
+bb8_ifconv:27  %tmp_20 = or i1 %sel_tmp4, %tmp_3               ; <i1> [#uses=3]
+
+ST_7: sel_tmp6 [1/1] 1.37ns
+bb8_ifconv:28  %sel_tmp6 = select i1 %tmp_20, i8 %sel_tmp5, i8 %sel_tmp3 ; <i8> [#uses=1]
+
+ST_7: pixel_out_val_1_1 [1/1] 1.37ns
+bb8_ifconv:31  %pixel_out_val_1_1 = select i1 %sel_tmp10, i8 -1, i8 %sel_tmp6 ; <i8> [#uses=2]
+
+ST_7: sel_tmp11 [1/1] 1.37ns
+bb8_ifconv:32  %sel_tmp11 = select i1 %tmp_19, i8 0, i8 %pixel_out_val_0_load ; <i8> [#uses=1]
+
+ST_7: sel_tmp12 [1/1] 0.00ns
+bb8_ifconv:33  %sel_tmp12 = sext i1 %sel_tmp4 to i8            ; <i8> [#uses=1]
+
+ST_7: sel_tmp13 [1/1] 1.37ns
+bb8_ifconv:34  %sel_tmp13 = select i1 %tmp_20, i8 %sel_tmp12, i8 %sel_tmp11 ; <i8> [#uses=1]
+
+ST_7: pixel_out_val_0_1 [1/1] 1.37ns
+bb8_ifconv:35  %pixel_out_val_0_1 = select i1 %sel_tmp10, i8 0, i8 %sel_tmp13 ; <i8> [#uses=2]
+
+ST_7: sel_tmp15 [1/1] 1.37ns
+bb8_ifconv:37  %sel_tmp15 = select i1 %tmp_19, i8 %sel_tmp14, i8 %pixel_out_val_2_load ; <i8> [#uses=1]
+
+ST_7: sel_tmp16 [1/1] 1.37ns
+bb8_ifconv:38  %sel_tmp16 = select i1 %tmp_20, i8 %sel_tmp5, i8 %sel_tmp15 ; <i8> [#uses=1]
+
+ST_7: pixel_out_val_2_1 [1/1] 1.37ns
+bb8_ifconv:39  %pixel_out_val_2_1 = select i1 %sel_tmp10, i8 0, i8 %sel_tmp16 ; <i8> [#uses=2]
+
+ST_7: stg_104 [1/1] 1.70ns
+bb8_ifconv:40  call void @_ssdm_op_FifoWrite.volatile.i8P(i8* %dst_data_stream_0_V, i8 %pixel_out_val_0_1)
+
+ST_7: stg_105 [1/1] 1.70ns
+bb8_ifconv:41  call void @_ssdm_op_FifoWrite.volatile.i8P(i8* %dst_data_stream_1_V, i8 %pixel_out_val_1_1)
+
+ST_7: stg_106 [1/1] 1.70ns
+bb8_ifconv:42  call void @_ssdm_op_FifoWrite.volatile.i8P(i8* %dst_data_stream_2_V, i8 %pixel_out_val_2_1)
+
+ST_7: empty_154 [1/1] 0.00ns
+bb8_ifconv:43  %empty_154 = call i32 (...)* @_ssdm_op_SpecRegionEnd([14 x i8]* @p_str78, i32 %tmp_18) ; <i32> [#uses=0]
+
+ST_7: stg_108 [1/1] 0.00ns
+bb8_ifconv:44  store i8 %pixel_out_val_1_1, i8* %pixel_out_val_1
+
+ST_7: stg_109 [1/1] 0.00ns
+bb8_ifconv:45  store i8 %pixel_out_val_0_1, i8* %pixel_out_val_0
+
+ST_7: stg_110 [1/1] 0.00ns
+bb8_ifconv:46  store i8 %pixel_out_val_2_1, i8* %pixel_out_val_2
+
+ST_7: stg_111 [1/1] 0.00ns
+bb8_ifconv:47  br label %bb24
+
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A
