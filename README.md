@@ -53,10 +53,10 @@ Note: Much of this tutorial is copied from TA Yuan Zhou (yz882@cornell.edu).
 
 For software simulation of your HLS kernel, go into the directory above and run:
 
-  make sim
+    make sim
   
 To compile the entire project (both sw and hls), generate bitstream and SD card image, do:
 
-  make all
+    make all
 
 
