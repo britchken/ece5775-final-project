@@ -168,10 +168,10 @@ void median_filter(UC_IMAGE& src, UC_IMAGE& dst)
  HLS_SIZE_T rows = src.rows;
  HLS_SIZE_T cols = src.cols;
 
- // kernel is of 5x5 so need only 4 rows of line buffer, 5th row will be used of window buffer
+ // kernel is size 9x9 so need only 8 rows of line buffer
  hls::LineBuffer<8, 1920, unsigned char> lineBuffer;
  
- // 5x5 window buffer/kernal which traverse horizontally through line buffer
+ // 9x9 window buffer/kernal which traverses horizontally through line buffer
  hls::Window<9,9, unsigned char> window;
 
 #pragma PIPELINE II=1
@@ -190,11 +190,8 @@ void median_filter(UC_IMAGE& src, UC_IMAGE& dst)
  unsigned char lineBuff7;
   
  for ( HLS_SIZE_T i =0; i< rows+1; i++) {
-//#pragma HLS LOOP_TRIPCOUNT min=601 max=1081 avg=721 
   for (HLS_SIZE_T j =0 ; j <cols+1; j++ ) {
-//#pragma HLS LOOP_TRIPCOUNT min=801 max=1921 avg=1281
 #pragma HLS LOOP_FLATTEN OFF
-//#pragma HLS DEPENDENCE array inter false
 #pragma HLS PIPELINE
     if(i<rows && j<cols) {
      src >> pixel_in;
@@ -249,7 +246,7 @@ void median_filter(UC_IMAGE& src, UC_IMAGE& dst)
     
     unsigned int countOnes = 0;
   
-   // 1st 4 rows and column will have garbage values
+   // The first 8 rows and column will have garbage values
    // because window is not filled initially, so for them
    // assign 1st four rows and columns as black
    if (i< 8 || j < 8 || i>rows-1 || j> cols - 1) {
@@ -262,19 +259,17 @@ void median_filter(UC_IMAGE& src, UC_IMAGE& dst)
       }
     }
 
-    // check if majority of the pixels are red
-    // if so, then assign it as white value, otherwise black value
+    // check if majority of the pixels are white
+    // if so, then assign the output to white, otherwise black
     // note: white = 255 pixel value, black = 0 pixel value
-    // threshold point is 19. That means, out of 5x5 = 25 pixel,
-    //  atleast 19 pixels have to red for median value to be white
+    // threshold point is 42. That means, out of 9x9 = 81 pixels,
+    // at least 42 pixels have to white for median value to be white
     pixel_out_val = (countOnes > 41 ) ? 255 : 0;
    }
   
-  // if pixel is within the bound then assign the value to the out going pixel
+  // if pixel is within the bound then assign the value to the outgoing pixel
   if ( j>0 && i>0 ) {
    pixel_out.val[0] = pixel_out_val;
-   //pixel_out.val[1] = 0;
-   //pixel_out.val[2] = 0;
    dst << pixel_out;
   }
   } // end of inner for loop
