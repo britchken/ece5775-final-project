@@ -160,8 +160,8 @@ void rgb2bw(RGB_IMAGE& rgb, UC_IMAGE& bw)
 }
 
 // ========================================================================
-// this function does 5x5 median filtering on the input image and deteriorates
-// the noice to do better corner detection
+// This function does median filtering with a 9x9 kernel on the input image
+// in order to reduce the noise
 // ========================================================================
 void median_filter(UC_IMAGE& src, UC_IMAGE& dst)
 {
